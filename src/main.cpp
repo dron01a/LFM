@@ -35,6 +35,45 @@ int main(int argc, char **argv){
             std::cout << "liza: error >> " << error << std::endl; // message 
         }
     }
+    if (strcmp(argv[1],"mdr") == 0){
+        try{
+            if( argc == 2 ){
+                throw "folder name not specified";
+            }
+            if( argc == 3 ){ 
+                folder * temp = new folder(argv[2],"./");
+                if (!temp->verification() ){
+                    temp->create();// create folder
+                    std::cout << "liza: folder " << argv[2] << " created" << std::endl; // message 
+                }
+                else{
+                    std::cout << "liza: folder " << argv[2] << " already exists" << std::endl; // message
+                }
+                delete temp; 
+            }
+            if( argc == 4 ){
+                if (!search(argv[2])){
+                    throw "incorrect path";
+                }else{
+                    folder *temp = new folder(argv[3], argv[2]);
+                    if (!temp->verification()){
+                        temp->create(); // create folder
+                        std::cout << "liza: folder " << argv[3] << " created,"
+                                  << " in " << argv[2] << std::endl; // message
+                    }
+                    else{
+                        std::cout << "liza: folder " << argv[3] << " in " << argv[2] << " already exists" << std::endl; // message
+                    }
+                }
+            }
+            if( argc > 4){
+                throw "wrong number of argumants"; 
+            }
+        }
+        catch(const char* error){
+            std::cout << "liza: error >> " << error << std::endl; // message 
+        }
+    }
     if (strcmp(argv[1],"info") == 0){
         try{
             if( argc == 2 ){
