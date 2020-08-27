@@ -81,7 +81,7 @@ int main(int argc, char **argv){
             }
             if( argc == 3 ){
                 if(!search(argv[2])){
-                        throw -1;
+                    throw -1;
                 }
                 if(is_folder(argv[2])){ // if is folder                     
                     folder * temp = new folder(argv[2],"./" ); // temp object
@@ -111,6 +111,14 @@ int main(int argc, char **argv){
             if(error -1){
                 std::cout << "liza: error >> " << argv[2] << " not found\n";
             }
+        }
+    }
+    if (strcmp(argv[1],"delete") == 0){
+        try{
+            
+        }
+        catch(const char* error){
+
         }
     }
     return 0;
