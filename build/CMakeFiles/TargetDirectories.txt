@@ -1,0 +1,3 @@
+/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles/rebuild_cache.dir
+/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles/edit_cache.dir
+/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles/Liza.dir

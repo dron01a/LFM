@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall  -rdynamic CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o CMakeFiles/Liza.dir/src/main.cpp.o  -o Liza 

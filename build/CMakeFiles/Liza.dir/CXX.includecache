@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/armodrey/Cклад/Liza(file manager)/src/FSTool/file control.cpp
+file control.h
+/media/armodrey/Cклад/Liza(file manager)/src/FSTool/file control.h
+iostream
+-
+
+/media/armodrey/Cклад/Liza(file manager)/src/FSTool/file control.h
+string
+-
+stdio.h
+-
+sys/stat.h
+-
+sys/types.h
+-
+fstream
+-
+string.h
+-
+unistd.h
+-
+dirent.h
+/media/armodrey/Cклад/Liza(file manager)/src/FSTool/dirent.h
+direct.h
+/media/armodrey/Cклад/Liza(file manager)/src/FSTool/direct.h
+io.h
+/media/armodrey/Cклад/Liza(file manager)/src/FSTool/io.h
+dos.h
+/media/armodrey/Cклад/Liza(file manager)/src/FSTool/dos.h
+
