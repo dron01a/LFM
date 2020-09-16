@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o"
+  "CMakeFiles/Liza.dir/src/FSTool/file.cpp.o"
+  "CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o"
   "CMakeFiles/Liza.dir/src/main.cpp.o"
   "Liza"
   "Liza.pdb"

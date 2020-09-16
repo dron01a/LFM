@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/media/armodrey/Cклад/Liza(file manager)"
+CMAKE_SOURCE_DIR = "/home/armodrey/Проекты/Liza(file manager)"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/media/armodrey/Cклад/Liza(file manager)/build"
+CMAKE_BINARY_DIR = "/home/armodrey/Проекты/Liza(file manager)/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles" "/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles" "/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,59 @@ Liza/fast:
 	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/build
 .PHONY : Liza/fast
 
-src/FSTool/file_control.o: src/FSTool/file_control.cpp.o
+src/FSTool/file.o: src/FSTool/file.cpp.o
 
-.PHONY : src/FSTool/file_control.o
+.PHONY : src/FSTool/file.o
 
 # target to build an object file
-src/FSTool/file_control.cpp.o:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o
-.PHONY : src/FSTool/file_control.cpp.o
+src/FSTool/file.cpp.o:
+	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file.cpp.o
+.PHONY : src/FSTool/file.cpp.o
 
-src/FSTool/file_control.i: src/FSTool/file_control.cpp.i
+src/FSTool/file.i: src/FSTool/file.cpp.i
 
-.PHONY : src/FSTool/file_control.i
+.PHONY : src/FSTool/file.i
 
 # target to preprocess a source file
-src/FSTool/file_control.cpp.i:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.i
-.PHONY : src/FSTool/file_control.cpp.i
+src/FSTool/file.cpp.i:
+	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file.cpp.i
+.PHONY : src/FSTool/file.cpp.i
 
-src/FSTool/file_control.s: src/FSTool/file_control.cpp.s
+src/FSTool/file.s: src/FSTool/file.cpp.s
 
-.PHONY : src/FSTool/file_control.s
+.PHONY : src/FSTool/file.s
 
 # target to generate assembly for a file
-src/FSTool/file_control.cpp.s:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.s
-.PHONY : src/FSTool/file_control.cpp.s
+src/FSTool/file.cpp.s:
+	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file.cpp.s
+.PHONY : src/FSTool/file.cpp.s
+
+src/FSTool/folder.o: src/FSTool/folder.cpp.o
+
+.PHONY : src/FSTool/folder.o
+
+# target to build an object file
+src/FSTool/folder.cpp.o:
+	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o
+.PHONY : src/FSTool/folder.cpp.o
+
+src/FSTool/folder.i: src/FSTool/folder.cpp.i
+
+.PHONY : src/FSTool/folder.i
+
+# target to preprocess a source file
+src/FSTool/folder.cpp.i:
+	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/folder.cpp.i
+.PHONY : src/FSTool/folder.cpp.i
+
+src/FSTool/folder.s: src/FSTool/folder.cpp.s
+
+.PHONY : src/FSTool/folder.s
+
+# target to generate assembly for a file
+src/FSTool/folder.cpp.s:
+	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/folder.cpp.s
+.PHONY : src/FSTool/folder.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -186,9 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Liza"
-	@echo "... src/FSTool/file_control.o"
-	@echo "... src/FSTool/file_control.i"
-	@echo "... src/FSTool/file_control.s"
+	@echo "... src/FSTool/file.o"
+	@echo "... src/FSTool/file.i"
+	@echo "... src/FSTool/file.s"
+	@echo "... src/FSTool/folder.o"
+	@echo "... src/FSTool/folder.i"
+	@echo "... src/FSTool/folder.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -1,22 +1,60 @@
 #include "FSTool/file.h"
 #include "FSTool/folder.h"
-#include "WPTool/string_content.h"
-#include "message.h"
+
+#include <iostream>
 
 using namespace FSTool;
-using namespace WPTool;
-
-std::string lang_file_path;
-
-static inline void load_settings();
-static inline void load_language(std::string language);
 
 int main(int argc, char **argv){
-    if(argc < 2){
+    if(argc < 1){
         return 0; // if programm havent argv
     }
     else if(strcmp(argv[1],"mfl") == 0){
-        
+        try{
+            if(argc < 2 || argc > 5){
+                throw "wrong number of arguments";
+            }
+            else if( argc == 3 ){
+                file *temp = new file(argv[2]); // temp object
+                if(temp->exists()){ 
+                    std::cout << "liza > file \""<< argv[2] <<"\" already exists\n";
+                }
+                else{
+                    if(temp->create() == 0){
+                        std::cout << "liza > file \""<< argv[2] <<"\" created\n";
+                    }
+                    else{
+                        std::cout << "liza > file creation error\n";
+                    }
+                }
+                delete temp;
+            }
+            else if(argc == 4){
+                folder *tmp_dir = new folder(argv[2]);   // temp object for folder
+                file *temp = new file(argv[2], argv[3]); // temp object for file
+                if(!tmp_dir->exists()){
+                    std::cout << "liza > folder not found\n";
+                }
+                else{
+                    if(temp->exists()){ 
+                        std::cout << "liza > file \""<< argv[3] <<"\" already exists\n";
+                    }
+                    else{
+                        if(temp->create() == 0){
+                            std::cout << "liza > file \""<< argv[2] <<"\" created\n";
+                        }
+                        else{
+                            std::cout << "liza > file creation error\n";
+                        }
+                    }
+                }
+                delete tmp_dir;
+                delete temp;
+            }
+        }
+        catch(std::string _text){
+            std::cout << "liza > " << _text << std::endl; 
+        }
     }
     else if(strcmp(argv[1],"mdr") == 0){
 
@@ -24,36 +62,14 @@ int main(int argc, char **argv){
     else if(strcmp(argv[1],"info") == 0){
 
     }
-    else if(strcmp(argv[1],"delete") == 0){
+    else if(strcmp(argv[1],"rfl") == 0){
         
+    }
+    else if(strcmp(argv[1],"rdl") == 0){
+        
+    }
+    else{
+        std::cout << "Liza > unknown command\n";
     }
     return 0;
 }
-
-static inline void load_settings(){
-    if(folder("./settings/").exists()){
-        // ...
-    }
-    else{
-        file *config = new file("./settings/config.txt"); // for file config.txt
-        if(config->exists()){  // set default settings
-            config->add("lang: rus");
-            config->add("message text color: 01m");
-            config->add("message border color: 30m");
-            config->add("bc color: black");
-        }
-        string_content lang(config->get(0), ": "); // load info for language 
-        load_language(lang[1]); // load language 
-    }
-}
-
-static inline void load_language(std::string language){
-    lang_file_path = "./language/" + language + ".txt";
-    file * lan = new file(lang_file_path); // temp file to check 
-    if (lan->exists()){
-        message * error_mes = new message;
-        error_mes->set("LiZA > not found settings file");
-        return_message(*error_mes); // return message of not found
-        delete error_mes;
-    }
-    delete lan;

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/media/armodrey/Cклад/Liza(file manager)"
+CMAKE_SOURCE_DIR = "/home/armodrey/Проекты/Liza(file manager)"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/media/armodrey/Cклад/Liza(file manager)/build"
+CMAKE_BINARY_DIR = "/home/armodrey/Проекты/Liza(file manager)/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Liza.dir/depend.make
@@ -57,45 +57,60 @@ include CMakeFiles/Liza.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Liza.dir/flags.make
 
-CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o: CMakeFiles/Liza.dir/flags.make
-CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o: ../src/FSTool/file\ control.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o -c "/media/armodrey/Cклад/Liza(file manager)/src/FSTool/file control.cpp"
+CMakeFiles/Liza.dir/src/FSTool/file.cpp.o: CMakeFiles/Liza.dir/flags.make
+CMakeFiles/Liza.dir/src/FSTool/file.cpp.o: ../src/FSTool/file.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Liza.dir/src/FSTool/file.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Liza.dir/src/FSTool/file.cpp.o -c "/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.cpp"
 
-CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/armodrey/Cклад/Liza(file manager)/src/FSTool/file control.cpp" > CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.i
+CMakeFiles/Liza.dir/src/FSTool/file.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Liza.dir/src/FSTool/file.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.cpp" > CMakeFiles/Liza.dir/src/FSTool/file.cpp.i
 
-CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/armodrey/Cклад/Liza(file manager)/src/FSTool/file control.cpp" -o CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.s
+CMakeFiles/Liza.dir/src/FSTool/file.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Liza.dir/src/FSTool/file.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.cpp" -o CMakeFiles/Liza.dir/src/FSTool/file.cpp.s
+
+CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o: CMakeFiles/Liza.dir/flags.make
+CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o: ../src/FSTool/folder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o -c "/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.cpp"
+
+CMakeFiles/Liza.dir/src/FSTool/folder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Liza.dir/src/FSTool/folder.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.cpp" > CMakeFiles/Liza.dir/src/FSTool/folder.cpp.i
+
+CMakeFiles/Liza.dir/src/FSTool/folder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Liza.dir/src/FSTool/folder.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.cpp" -o CMakeFiles/Liza.dir/src/FSTool/folder.cpp.s
 
 CMakeFiles/Liza.dir/src/main.cpp.o: CMakeFiles/Liza.dir/flags.make
 CMakeFiles/Liza.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Liza.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Liza.dir/src/main.cpp.o -c "/media/armodrey/Cклад/Liza(file manager)/src/main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Liza.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Liza.dir/src/main.cpp.o -c "/home/armodrey/Проекты/Liza(file manager)/src/main.cpp"
 
 CMakeFiles/Liza.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Liza.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/media/armodrey/Cклад/Liza(file manager)/src/main.cpp" > CMakeFiles/Liza.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/armodrey/Проекты/Liza(file manager)/src/main.cpp" > CMakeFiles/Liza.dir/src/main.cpp.i
 
 CMakeFiles/Liza.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Liza.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/media/armodrey/Cклад/Liza(file manager)/src/main.cpp" -o CMakeFiles/Liza.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/armodrey/Проекты/Liza(file manager)/src/main.cpp" -o CMakeFiles/Liza.dir/src/main.cpp.s
 
 # Object files for target Liza
 Liza_OBJECTS = \
-"CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o" \
+"CMakeFiles/Liza.dir/src/FSTool/file.cpp.o" \
+"CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o" \
 "CMakeFiles/Liza.dir/src/main.cpp.o"
 
 # External object files for target Liza
 Liza_EXTERNAL_OBJECTS =
 
-Liza: CMakeFiles/Liza.dir/src/FSTool/file_control.cpp.o
+Liza: CMakeFiles/Liza.dir/src/FSTool/file.cpp.o
+Liza: CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o
 Liza: CMakeFiles/Liza.dir/src/main.cpp.o
 Liza: CMakeFiles/Liza.dir/build.make
 Liza: CMakeFiles/Liza.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Liza"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Liza"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Liza.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +123,6 @@ CMakeFiles/Liza.dir/clean:
 .PHONY : CMakeFiles/Liza.dir/clean
 
 CMakeFiles/Liza.dir/depend:
-	cd "/media/armodrey/Cклад/Liza(file manager)/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/media/armodrey/Cклад/Liza(file manager)" "/media/armodrey/Cклад/Liza(file manager)" "/media/armodrey/Cклад/Liza(file manager)/build" "/media/armodrey/Cклад/Liza(file manager)/build" "/media/armodrey/Cклад/Liza(file manager)/build/CMakeFiles/Liza.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/armodrey/Проекты/Liza(file manager)/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/armodrey/Проекты/Liza(file manager)" "/home/armodrey/Проекты/Liza(file manager)" "/home/armodrey/Проекты/Liza(file manager)/build" "/home/armodrey/Проекты/Liza(file manager)/build" "/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles/Liza.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Liza.dir/depend
 
