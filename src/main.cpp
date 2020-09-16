@@ -24,7 +24,7 @@ int main(int argc, char **argv){
                         std::cout << "liza > file \""<< argv[2] <<"\" created\n";
                     }
                     else{
-                        std::cout << "liza > file creation error\n";
+                        throw "liza > file creation error\n";
                     }
                 }
                 delete temp;
@@ -33,7 +33,7 @@ int main(int argc, char **argv){
                 folder *tmp_dir = new folder(argv[2]);   // temp object for folder
                 file *temp = new file(argv[2], argv[3]); // temp object for file
                 if(!tmp_dir->exists()){
-                    std::cout << "liza > folder not found\n";
+                    throw "folder not found\n";
                 }
                 else{
                     if(temp->exists()){ 
@@ -44,7 +44,7 @@ int main(int argc, char **argv){
                             std::cout << "liza > file \""<< argv[2] <<"\" created\n";
                         }
                         else{
-                            std::cout << "liza > file creation error\n";
+                            throw "liza > file creation error\n";
                         }
                     }
                 }
@@ -53,11 +53,29 @@ int main(int argc, char **argv){
             }
         }
         catch(std::string _text){
-            std::cout << "liza > " << _text << std::endl; 
+            std::cout << "liza > " << _text << std::endl; // return error message
         }
     }
     else if(strcmp(argv[1],"mdr") == 0){
-
+        try{
+            if(argc < 2 || argc > 5){
+                throw "wrong number of arguments";
+            }
+            else if(argc == 3){
+                folder *temp = new folder(argv[2]); // temp object
+                if(temp->exists()){
+                    std::cout << "liza > folder \""<< argv[3] <<"\" already exists\n";
+                }
+                else{
+                    temp->create(); // create folder
+                } 
+                delete temp;
+            }
+           
+        }
+        catch(std::string _text){
+            std::cout << "liza > " << _text << std::endl; // return error message
+        }
     }
     else if(strcmp(argv[1],"info") == 0){
 
