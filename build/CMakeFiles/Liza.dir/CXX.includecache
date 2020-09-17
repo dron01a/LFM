@@ -18,11 +18,19 @@ vector
 string.h
 /home/armodrey/Проекты/Liza(file manager)/src/FSTool/string.h
 
+/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.cpp
+file.h
+/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.h
+
 /home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.h
 FSTbase.h
 /home/armodrey/Проекты/Liza(file manager)/src/FSTool/FSTbase.h
 fstream
 -
+
+/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.cpp
+folder.h
+/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.h
 
 /home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.h
 unistd.h

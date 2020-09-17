@@ -68,6 +68,7 @@ int main(int argc, char **argv){
                 }
                 else{
                     temp->create(); // create folder
+                    std::cout << "liza > folder \""<< argv[3] <<"\" created\n";
                 } 
                 delete temp;
             }
@@ -77,11 +78,25 @@ int main(int argc, char **argv){
             std::cout << "liza > " << _text << std::endl; // return error message
         }
     }
-    else if(strcmp(argv[1],"info") == 0){
+    else if(strcmp(argv[1],"info") == 0){ 
 
     }
     else if(strcmp(argv[1],"rfl") == 0){
-        
+        try{
+            if(argc < 3){
+                throw "wrong number of arguments";
+            }
+            if(!file(argv[2]).exists()){
+                std::cout << "liza > folder \""<< argv[2] <<"\" not found\n";
+            }
+            else{
+                file(argv[2]).destroy(); // delete file
+                std::cout << "liza > folder \""<< argv[2] <<"\" deleted\n";
+            }
+        }
+        catch(std::string _text){
+            std::cout << "liza > " << _text << std::endl; // return error message
+        }
     }
     else if(strcmp(argv[1],"rdl") == 0){
         
