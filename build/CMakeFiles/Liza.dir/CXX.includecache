@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/FSTbase.h
+/home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
 sys/stat.h
 -
 sys/types.h
@@ -16,43 +16,35 @@ string
 vector
 -
 string.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/string.h
+/home/armodrey/Liza(file manager)/src/FSTool/string.h
 
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.cpp
-file.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.h
-
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.h
+/home/armodrey/Liza(file manager)/src/FSTool/file.h
 FSTbase.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/FSTbase.h
+/home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
 fstream
 -
 
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.cpp
-folder.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.h
-
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.h
+/home/armodrey/Liza(file manager)/src/FSTool/folder.h
 unistd.h
 -
 dirent.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/dirent.h
+/home/armodrey/Liza(file manager)/src/FSTool/dirent.h
 direct.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/direct.h
+/home/armodrey/Liza(file manager)/src/FSTool/direct.h
 io.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/io.h
+/home/armodrey/Liza(file manager)/src/FSTool/io.h
 dos.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/dos.h
+/home/armodrey/Liza(file manager)/src/FSTool/dos.h
 FSTbase.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/FSTbase.h
+/home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
 vector
 -
 
-/home/armodrey/Проекты/Liza(file manager)/src/main.cpp
+/home/armodrey/Liza(file manager)/src/main.cpp
 FSTool/file.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.h
+/home/armodrey/Liza(file manager)/src/FSTool/file.h
 FSTool/folder.h
-/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.h
+/home/armodrey/Liza(file manager)/src/FSTool/folder.h
 iostream
 -
 

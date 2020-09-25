@@ -31,7 +31,7 @@ int main(int argc, char **argv){
             }
             else if(argc == 4){
                 folder *tmp_dir = new folder(argv[2]);   // temp object for folder
-                file *temp = new file(argv[2], argv[3]); // temp object for file
+                file *temp = new file(argv[3], argv[2]); // temp object for file
                 if(!tmp_dir->exists()){
                     throw "folder not found\n";
                 }
@@ -41,7 +41,7 @@ int main(int argc, char **argv){
                     }
                     else{
                         if(temp->create() == 0){
-                            std::cout << "liza > file \""<< argv[2] <<"\" created\n";
+                            std::cout << "liza > file \""<< argv[3] <<"\" created\n";
                         }
                         else{
                             throw "liza > file creation error\n";
@@ -64,15 +64,14 @@ int main(int argc, char **argv){
             else if(argc == 3){
                 folder *temp = new folder(argv[2]); // temp object
                 if(temp->exists()){
-                    std::cout << "liza > folder \""<< argv[3] <<"\" already exists\n";
+                    std::cout << "liza > folder \""<< argv[2] <<"\" already exists\n";
                 }
                 else{
                     temp->create(); // create folder
-                    std::cout << "liza > folder \""<< argv[3] <<"\" created\n";
+                    std::cout << "liza > folder \""<< argv[2] <<"\" created\n";
                 } 
                 delete temp;
-            }
-           
+            }          
         }
         catch(std::string _text){
             std::cout << "liza > " << _text << std::endl; // return error message
@@ -91,15 +90,27 @@ int main(int argc, char **argv){
             }
             else{
                 file(argv[2]).destroy(); // delete file
-                std::cout << "liza > folder \""<< argv[2] <<"\" deleted\n";
+                std::cout << "liza > file \""<< argv[2] <<"\" deleted\n";
             }
         }
         catch(std::string _text){
             std::cout << "liza > " << _text << std::endl; // return error message
         }
     }
-    else if(strcmp(argv[1],"rdl") == 0){
-        
+    else if(strcmp(argv[1],"rdr") == 0){
+        file(argv[2]).destroy(); // delete file
+        try{
+            if(!folder(argv[2]).exists()){
+                std::cout << "liza > folder \""<< argv[2] <<"\" not found\n";
+            }
+            else{
+                folder(argv[2]).destroy(); // delete file
+                std::cout << "liza > folder \""<< argv[2] <<"\" deleted\n";
+            }
+        }
+        catch(std::string _text){
+            std::cout << "liza > " << _text << std::endl; // return error message
+        }
     }
     else{
         std::cout << "Liza > unknown command\n";

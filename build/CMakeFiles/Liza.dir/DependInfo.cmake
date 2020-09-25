@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/armodrey/Проекты/Liza(file manager)/src/FSTool/file.cpp" "/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles/Liza.dir/src/FSTool/file.cpp.o"
-  "/home/armodrey/Проекты/Liza(file manager)/src/FSTool/folder.cpp" "/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o"
-  "/home/armodrey/Проекты/Liza(file manager)/src/main.cpp" "/home/armodrey/Проекты/Liza(file manager)/build/CMakeFiles/Liza.dir/src/main.cpp.o"
+  "/home/armodrey/Liza(file manager)/src/FSTool/file.cpp" "/home/armodrey/Liza(file manager)/build/CMakeFiles/Liza.dir/src/FSTool/file.cpp.o"
+  "/home/armodrey/Liza(file manager)/src/FSTool/folder.cpp" "/home/armodrey/Liza(file manager)/build/CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o"
+  "/home/armodrey/Liza(file manager)/src/main.cpp" "/home/armodrey/Liza(file manager)/build/CMakeFiles/Liza.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
