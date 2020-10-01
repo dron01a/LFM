@@ -1,5 +1,6 @@
 #include "FSTool/file.h"
 #include "FSTool/folder.h"
+#include "FSTool/FSTool.h"
 
 #include <iostream>
 
@@ -78,7 +79,34 @@ int main(int argc, char **argv){
         }
     }
     else if(strcmp(argv[1],"info") == 0){ 
-
+        if(is_file(argv[2])){
+            file * temp = new file(argv[2]);
+            std::cout << "File information:\n";
+            std::cout << temp->get_info().full_name << std::endl;
+            std::cout << "name: "<<temp->get_info().name << std::endl;
+            std::cout << "path: "<<temp->get_info().path << std::endl;
+            std::cout << "type: " <<temp->get_info().type << std::endl;
+            std::cout << "size: " <<temp->get_info().size << "bytes" << std::endl;
+            std::cout << "last modification: " <<temp->get_info().lm_day << ":" << temp->get_info().lm_month <<":" 
+                << temp->get_info().lm_year << " " << temp->get_info().lm_hour 
+                << temp->get_info().lm_min << temp->get_info().lm_sec << std::endl;
+            delete temp;
+        }
+        if(is_folder(argv[2])){
+            folder * temp = new folder(argv[2]);
+            std::cout << "File information:\n";
+            std::cout << temp->get_info().full_name << std::endl;
+            std::cout << "name: "<<temp->get_info().name << std::endl;
+            std::cout << "path: "<<temp->get_info().path << std::endl;
+            std::cout << "size: " <<temp->get_info().size << "bytes" << std::endl;
+            std::cout << "subdirs: " << temp->get_info().folders << std::endl;
+            std::cout << "files: " << temp->get_info().files << std::endl;
+            std::cout << "total: " << temp->get_info().elements << std::endl;
+            std::cout << "last modification: " <<temp->get_info().lm_day << ":" << temp->get_info().lm_month <<":" 
+                << temp->get_info().lm_year << " " << temp->get_info().lm_hour 
+                << temp->get_info().lm_min << temp->get_info().lm_sec << std::endl;
+            delete temp;
+        }
     }
     else if(strcmp(argv[1],"rfl") == 0){
         try{

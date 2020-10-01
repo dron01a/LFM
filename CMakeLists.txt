@@ -8,6 +8,6 @@ set (CMAKE_CXX_FLAGS "${CMAKE_FLAGS} -Wall")
 file(GLOB CPPS "./src/*.cpp"
           FsPPS "./src/FSTool/*.cpp")
 
-add_executable(Liza ${CPPS} ${FsPPS})
+add_executable(liza ${CPPS} ${FsPPS})
 
 
