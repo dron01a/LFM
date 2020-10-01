@@ -111,17 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Liza
+# Target rules for targets named liza
 
 # Build rule for target.
-Liza: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Liza
-.PHONY : Liza
+liza: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 liza
+.PHONY : liza
 
 # fast build rule for target.
-Liza/fast:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/build
-.PHONY : Liza/fast
+liza/fast:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/build
+.PHONY : liza/fast
+
+src/FSTool/FSTool.o: src/FSTool/FSTool.cpp.o
+
+.PHONY : src/FSTool/FSTool.o
+
+# target to build an object file
+src/FSTool/FSTool.cpp.o:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o
+.PHONY : src/FSTool/FSTool.cpp.o
+
+src/FSTool/FSTool.i: src/FSTool/FSTool.cpp.i
+
+.PHONY : src/FSTool/FSTool.i
+
+# target to preprocess a source file
+src/FSTool/FSTool.cpp.i:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.i
+.PHONY : src/FSTool/FSTool.cpp.i
+
+src/FSTool/FSTool.s: src/FSTool/FSTool.cpp.s
+
+.PHONY : src/FSTool/FSTool.s
+
+# target to generate assembly for a file
+src/FSTool/FSTool.cpp.s:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.s
+.PHONY : src/FSTool/FSTool.cpp.s
 
 src/FSTool/file.o: src/FSTool/file.cpp.o
 
@@ -129,7 +156,7 @@ src/FSTool/file.o: src/FSTool/file.cpp.o
 
 # target to build an object file
 src/FSTool/file.cpp.o:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file.cpp.o
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/file.cpp.o
 .PHONY : src/FSTool/file.cpp.o
 
 src/FSTool/file.i: src/FSTool/file.cpp.i
@@ -138,7 +165,7 @@ src/FSTool/file.i: src/FSTool/file.cpp.i
 
 # target to preprocess a source file
 src/FSTool/file.cpp.i:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file.cpp.i
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/file.cpp.i
 .PHONY : src/FSTool/file.cpp.i
 
 src/FSTool/file.s: src/FSTool/file.cpp.s
@@ -147,7 +174,7 @@ src/FSTool/file.s: src/FSTool/file.cpp.s
 
 # target to generate assembly for a file
 src/FSTool/file.cpp.s:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/file.cpp.s
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/file.cpp.s
 .PHONY : src/FSTool/file.cpp.s
 
 src/FSTool/folder.o: src/FSTool/folder.cpp.o
@@ -156,7 +183,7 @@ src/FSTool/folder.o: src/FSTool/folder.cpp.o
 
 # target to build an object file
 src/FSTool/folder.cpp.o:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/folder.cpp.o
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/folder.cpp.o
 .PHONY : src/FSTool/folder.cpp.o
 
 src/FSTool/folder.i: src/FSTool/folder.cpp.i
@@ -165,7 +192,7 @@ src/FSTool/folder.i: src/FSTool/folder.cpp.i
 
 # target to preprocess a source file
 src/FSTool/folder.cpp.i:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/folder.cpp.i
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/folder.cpp.i
 .PHONY : src/FSTool/folder.cpp.i
 
 src/FSTool/folder.s: src/FSTool/folder.cpp.s
@@ -174,7 +201,7 @@ src/FSTool/folder.s: src/FSTool/folder.cpp.s
 
 # target to generate assembly for a file
 src/FSTool/folder.cpp.s:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/FSTool/folder.cpp.s
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/FSTool/folder.cpp.s
 .PHONY : src/FSTool/folder.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -183,7 +210,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -192,7 +219,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -201,7 +228,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -212,7 +239,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Liza"
+	@echo "... liza"
+	@echo "... src/FSTool/FSTool.o"
+	@echo "... src/FSTool/FSTool.i"
+	@echo "... src/FSTool/FSTool.s"
 	@echo "... src/FSTool/file.o"
 	@echo "... src/FSTool/file.i"
 	@echo "... src/FSTool/file.s"

@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = "/home/armodrey/Liza(file manager)/build"
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Liza.dir/all
+all: CMakeFiles/liza.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Liza.dir/clean
+clean: CMakeFiles/liza.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Liza.dir
+# Target rules for target CMakeFiles/liza.dir
 
 # All Build rule for target.
-CMakeFiles/Liza.dir/all:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/depend
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/armodrey/Liza(file manager)/build/CMakeFiles" --progress-num=1,2,3,4 "Built target Liza"
-.PHONY : CMakeFiles/Liza.dir/all
+CMakeFiles/liza.dir/all:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/depend
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/armodrey/Liza(file manager)/build/CMakeFiles" --progress-num=1,2,3,4,5 "Built target liza"
+.PHONY : CMakeFiles/liza.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Liza.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/armodrey/Liza(file manager)/build/CMakeFiles" 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Liza.dir/all
+CMakeFiles/liza.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/armodrey/Liza(file manager)/build/CMakeFiles" 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/liza.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/armodrey/Liza(file manager)/build/CMakeFiles" 0
-.PHONY : CMakeFiles/Liza.dir/rule
+.PHONY : CMakeFiles/liza.dir/rule
 
 # Convenience name for target.
-Liza: CMakeFiles/Liza.dir/rule
+liza: CMakeFiles/liza.dir/rule
 
-.PHONY : Liza
+.PHONY : liza
 
 # clean rule for target.
-CMakeFiles/Liza.dir/clean:
-	$(MAKE) -f CMakeFiles/Liza.dir/build.make CMakeFiles/Liza.dir/clean
-.PHONY : CMakeFiles/Liza.dir/clean
+CMakeFiles/liza.dir/clean:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/clean
+.PHONY : CMakeFiles/liza.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

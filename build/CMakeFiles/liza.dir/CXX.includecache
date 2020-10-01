@@ -18,6 +18,10 @@ vector
 string.h
 /home/armodrey/Liza(file manager)/src/FSTool/string.h
 
+/home/armodrey/Liza(file manager)/src/FSTool/FSTool.h
+FSTbase.h
+/home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
+
 /home/armodrey/Liza(file manager)/src/FSTool/file.h
 FSTbase.h
 /home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
@@ -45,6 +49,8 @@ FSTool/file.h
 /home/armodrey/Liza(file manager)/src/FSTool/file.h
 FSTool/folder.h
 /home/armodrey/Liza(file manager)/src/FSTool/folder.h
+FSTool/FSTool.h
+/home/armodrey/Liza(file manager)/src/FSTool/FSTool.h
 iostream
 -
 
