@@ -6,9 +6,8 @@
 
 using namespace FSTool;
 
-bool find(std::string type, std::string name);   // find file/folder
-void create(std::string type, std::string name); // create folder/file
-void destroy(std::string name);                  // destroy folder/file
+void create(std::string type, std::string name);    // create folder/file
+void destroy(std::string type, std::string name);   // destroy folder/file
 
 int main(int argc, char **argv){
     if(argc < 0){
@@ -60,51 +59,26 @@ int main(int argc, char **argv){
             delete temp;
         }
     }
-    else if(strcmp(argv[1],"rfl") == 0){
+    else if (argv[1][0] == 'r'){
         try{
-            if(argc < 3){
-                throw "wrong number of arguments";
+            if(strcmp(argv[1],"rfl") == 0){
+                destroy("file", argv[2]);
             }
-            if(!file(argv[2]).exists()){
-                std::cout << "liza > folder \""<< argv[2] <<"\" not found\n";
+            else if (strcmp(argv[1],"rdr") == 0){
+                destroy("folder", argv[2]);
             }
             else{
-                file(argv[2]).destroy(); // delete file
-                std::cout << "liza > file \""<< argv[2] <<"\" deleted\n";
+                throw "Liza > unknown command";
             }
         }
-        catch(std::string _text){
-            std::cout << "liza > " << _text << std::endl; // return error message
-        }
-    }
-    else if(strcmp(argv[1],"rdr") == 0){
-        file(argv[2]).destroy(); // delete file
-        try{
-            if(!folder(argv[2]).exists()){
-                std::cout << "liza > folder \""<< argv[2] <<"\" not found\n";
-            }
-            else{
-                folder(argv[2]).destroy(); // delete file
-                std::cout << "liza > folder \""<< argv[2] <<"\" deleted\n";
-            }
-        }
-        catch(std::string _text){
-            std::cout << "liza > " << _text << std::endl; // return error message
+        catch(std::string _err){
+            std::cout << _err << std::endl;
         }
     }
     else{
         std::cout << "Liza > unknown command\n";
     }
     return 0;
-}
-
-bool find(std::string type, std::string name){
-    if(type == "fl"){
-         return file(name).exists();      
-    }
-    if(type == "dr"){
-        return folder(name).exists();
-    }
 }
 
 void create(std::string type, std::string name){
@@ -129,5 +103,21 @@ void create(std::string type, std::string name){
     delete temp;
 }
 
-
+void destroy(std::string type, std::string name){
+    _base *temp; // temp object
+    if(type == "file"){
+        temp = new file(name); 
+    }
+    if(type == "folder"){
+        temp = new folder(name); 
+    }
+    if(!temp->exists()){ 
+        std::cout << "liza > "<< type << " \""<< name <<"\" not found\n";
+    }
+    else{
+        temp->destroy(); // delete 
+        std::cout << "liza > "<< type << "\""<< name <<"\" deleted\n";
+    }
+    delete temp; // free memory
+}
 
