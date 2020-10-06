@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTbase.h
 sys/stat.h
 -
 sys/types.h
@@ -16,41 +16,53 @@ string
 vector
 -
 string.h
-/home/armodrey/Liza(file manager)/src/FSTool/string.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/string.h
 
-/home/armodrey/Liza(file manager)/src/FSTool/FSTool.h
-FSTbase.h
-/home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTool.cpp
+FSTool.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTool.h
 
-/home/armodrey/Liza(file manager)/src/FSTool/file.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTool.h
 FSTbase.h
-/home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTbase.h
+
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/file.cpp
+file.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/file.h
+
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/file.h
+FSTbase.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTbase.h
 fstream
 -
 
-/home/armodrey/Liza(file manager)/src/FSTool/folder.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/folder.cpp
+folder.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/folder.h
+
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/folder.h
 unistd.h
 -
 dirent.h
-/home/armodrey/Liza(file manager)/src/FSTool/dirent.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/dirent.h
 direct.h
-/home/armodrey/Liza(file manager)/src/FSTool/direct.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/direct.h
 io.h
-/home/armodrey/Liza(file manager)/src/FSTool/io.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/io.h
 dos.h
-/home/armodrey/Liza(file manager)/src/FSTool/dos.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/dos.h
 FSTbase.h
-/home/armodrey/Liza(file manager)/src/FSTool/FSTbase.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTbase.h
 vector
 -
 
-/home/armodrey/Liza(file manager)/src/main.cpp
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/main.cpp
 FSTool/file.h
-/home/armodrey/Liza(file manager)/src/FSTool/file.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/file.h
 FSTool/folder.h
-/home/armodrey/Liza(file manager)/src/FSTool/folder.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/folder.h
 FSTool/FSTool.h
-/home/armodrey/Liza(file manager)/src/FSTool/FSTool.h
+/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTool.h
 iostream
 -
 

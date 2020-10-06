@@ -27,7 +27,7 @@ namespace FSTool{
     _dirinfo dir_information(std::string full_name);
 
     // class for work with folders
-    class folder : public _base<_dirinfo>{
+    class folder : public _base{
     private:
         _dirinfo *_info = nullptr; // struct with info
     public:
