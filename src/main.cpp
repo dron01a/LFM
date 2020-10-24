@@ -1,5 +1,3 @@
-#include "FSTool/file.h"
-#include "FSTool/folder.h"
 #include "FSTool/FSTool.h"
 
 #include <iostream>
@@ -8,10 +6,22 @@ using namespace FSTool;
 
 void create(std::string type, std::string name);    // create folder/file
 void destroy(std::string type, std::string name);   // destroy folder/file
+void move(std::string name, std::string path);      // move folde/file
 
 int main(int argc, char **argv){
-    if(argc < 0){
+    if(argc == 1){
         return 0; // if programm havent argv
+    }
+    else if (strcmp(argv[1],"move") == 0){
+        try{
+            if(argc < 4 || argc > 4 ){
+                throw "number of args";
+            }
+            move(argv[2],argv[3]);
+        }
+        catch(std::string _err){
+            std::cout << _err << std::endl;
+        }
     }
     else if (argv[1][0] == 'm'){
         try{
@@ -20,6 +30,22 @@ int main(int argc, char **argv){
             }
             else if (strcmp(argv[1],"mdr") == 0){
                 create("folder", argv[2]);
+            }
+            else{
+                throw "Liza > unknown command";
+            }
+        }
+        catch(std::string _err){
+            std::cout << _err << std::endl;
+        }
+    }
+    else if (argv[1][0] == 'r'){
+        try{
+            if(strcmp(argv[1],"rfl") == 0){
+                destroy("file", argv[2]);
+            }
+            else if (strcmp(argv[1],"rdr") == 0){
+                destroy("folder", argv[2]);
             }
             else{
                 throw "Liza > unknown command";
@@ -57,22 +83,6 @@ int main(int argc, char **argv){
                 << temp->get_info().lm_year << " " << temp->get_info().lm_hour << ":"
                 << temp->get_info().lm_min << ":" << temp->get_info().lm_sec << std::endl;
             delete temp;
-        }
-    }
-    else if (argv[1][0] == 'r'){
-        try{
-            if(strcmp(argv[1],"rfl") == 0){
-                destroy("file", argv[2]);
-            }
-            else if (strcmp(argv[1],"rdr") == 0){
-                destroy("folder", argv[2]);
-            }
-            else{
-                throw "Liza > unknown command";
-            }
-        }
-        catch(std::string _err){
-            std::cout << _err << std::endl;
         }
     }
     else{
@@ -116,8 +126,25 @@ void destroy(std::string type, std::string name){
     }
     else{
         temp->destroy(); // delete 
-        std::cout << "liza > "<< type << "\""<< name <<"\" deleted\n";
+        std::cout << "liza > "<< type << " \""<< name <<"\" deleted\n";
     }
     delete temp; // free memory
 }
 
+void move(std::string name, std::string path){
+    _base *temp; // temp object
+    if(is_file(name)){
+        temp = new file(name); 
+    }
+    if(is_folder(name)){
+        temp = new folder(name); 
+    }
+    if(!temp->exists()){ 
+        std::cout << "liza > \""<< name <<"\" not found\n";
+    }
+    else{
+        temp->move(path); // delete 
+        std::cout << "liza > \""<< name <<"\" moved to \"" << path <<"\"\n";
+    }
+    delete temp; // free memory
+}
