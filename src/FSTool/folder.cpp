@@ -151,7 +151,7 @@ std::string FSTool::folder::back(){
 }
 
 
-strvect FSTool::folder::get_elements_of_path(){
+FSTool::strvect FSTool::folder::get_elements_of_path(){
     strvect elements; 
     std::string *temp = new std::string;
     char* token = NULL;
@@ -248,4 +248,34 @@ int FSTool::folder::destroy(){
     rmdir(this->_info->full_name.c_str());	
 #endif
     return 0;
+}
+
+FSTool::strvect FSTool::folder::get_content_list(){
+    strvect result;
+    for(int i = 0; i < this->_info->length; i++){
+        result.push_back(this->get(i));
+    }
+    return result;
+}
+
+void FSTool::folder::move(std::string path){
+    folder * temp = new folder(path);
+    if(!temp->exists()){
+        temp->create();
+    }
+    delete temp;
+    std::string * src;
+    src = new std::string(this->_info->full_name);
+    std::string * new_pl;
+    if(path[path.length()-1] != '/'){
+        new_pl = new std::string(path + "/" + this->_info->name);
+        this->_info->path = path + "/";
+    }else{
+        new_pl = new std::string(path + this->_info->name);
+        this->_info->path = path;
+    }
+	rename(src->c_str(), new_pl->c_str());
+    this->_info->full_name = *new_pl;
+    delete new_pl;
+    delete src;
 }

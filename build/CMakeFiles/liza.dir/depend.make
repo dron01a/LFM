@@ -4,6 +4,8 @@
 CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o: ../src/FSTool/FSTbase.h
 CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o: ../src/FSTool/FSTool.cpp
 CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o: ../src/FSTool/FSTool.h
+CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o: ../src/FSTool/file.h
+CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o: ../src/FSTool/folder.h
 
 CMakeFiles/liza.dir/src/FSTool/file.cpp.o: ../src/FSTool/FSTbase.h
 CMakeFiles/liza.dir/src/FSTool/file.cpp.o: ../src/FSTool/file.cpp

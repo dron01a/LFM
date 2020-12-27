@@ -6,7 +6,7 @@
 #include "dirent.h"
 #elif defined(WIN32) // for windows
 #include "direct.h"
-#include "io.h"dd
+#include "io.h"
 #include "dos.h"
 #endif
 #include "FSTbase.h"
@@ -36,13 +36,15 @@ namespace FSTool{
         ~folder();
         bool exists();                  // checks the folder for existence
         int create();                   // create folder in directory
-        int destroy();         // delete folder
+        int destroy();                  // delete folder
         bool empty();                   // if folder empty
         _dirinfo get_info();            // return information of folder
         std::string get(int index);     // return name of element in folder from index
         std::string back();             // return last element
         bool range(int index);          // check index
         strvect get_elements_of_path(); // return elements of path
+        strvect get_content_list();     // return file`s name`s 
+        void move (std::string path);   // move file to dir 
     };
 
 };

@@ -7,10 +7,11 @@
 #include <vector>
 #include "string.h"
 
-typedef std::vector<std::string> strvect;
 
 namespace FSTool {
 
+    typedef std::vector<std::string> strvect;
+    
     //base struct for folder and file info
     struct _baseINFO{
         std::string type;      // returns the file type depending on the extension
@@ -29,6 +30,8 @@ namespace FSTool {
     //base class for folder and file
     class _base{ 
     public:
+
+
         //virtual functions
         virtual std::string get(int index) = 0;     // get data fov index file system element
         virtual std::string back() = 0;             // return last element
@@ -38,6 +41,7 @@ namespace FSTool {
         virtual int create() = 0;                   // create file in directory
         virtual int destroy() = 0;                  // delete file
         virtual bool empty() = 0;                   // if file empty
+        virtual void move(std::string path) = 0;    // move object to path 
 
         //return first element 
         std::string front(){ 

@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/FSTool.cpp" "/media/armodrey/Cклад/проекты/Liza(file manager)/build/CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o"
-  "/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/file.cpp" "/media/armodrey/Cклад/проекты/Liza(file manager)/build/CMakeFiles/liza.dir/src/FSTool/file.cpp.o"
-  "/media/armodrey/Cклад/проекты/Liza(file manager)/src/FSTool/folder.cpp" "/media/armodrey/Cклад/проекты/Liza(file manager)/build/CMakeFiles/liza.dir/src/FSTool/folder.cpp.o"
-  "/media/armodrey/Cклад/проекты/Liza(file manager)/src/main.cpp" "/media/armodrey/Cклад/проекты/Liza(file manager)/build/CMakeFiles/liza.dir/src/main.cpp.o"
+  "/media/armodrey/Cклад/projects/Liza(file manager)/src/FSTool/FSTool.cpp" "/media/armodrey/Cклад/projects/Liza(file manager)/build/CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o"
+  "/media/armodrey/Cклад/projects/Liza(file manager)/src/FSTool/file.cpp" "/media/armodrey/Cклад/projects/Liza(file manager)/build/CMakeFiles/liza.dir/src/FSTool/file.cpp.o"
+  "/media/armodrey/Cклад/projects/Liza(file manager)/src/FSTool/folder.cpp" "/media/armodrey/Cклад/projects/Liza(file manager)/build/CMakeFiles/liza.dir/src/FSTool/folder.cpp.o"
+  "/media/armodrey/Cклад/projects/Liza(file manager)/src/main.cpp" "/media/armodrey/Cклад/projects/Liza(file manager)/build/CMakeFiles/liza.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
