@@ -13,43 +13,50 @@ int main(int argc, char **argv){
     if(argc == 1){
         return 0; // if programm havent argv
     }
-    else if (strcmp(argv[1],"move") == 0){
-        if(argc < 4 || argc > 4 ){
-            printf("%s/n","number of args");
-        }
-        move(argv[2],argv[3]);
-    }
     else if (argv[1][0] == 'm'){
-        if(strcmp(argv[1],"mfl") == 0){
-            for(int i = 2; i < argc; i++){
-                create("file", argv[i]);
+        if(argc < 2){
+            printf("%s/n","wrong number of args");
+        }
+        else{
+            if(strcmp(argv[1],"mfl") == 0){
+                for(int i = 2; i < argc; i++){
+                    create("file", argv[i]);
+                }
             }
-        }
-        else if (strcmp(argv[1],"mdr") == 0){
-            for(int i = 2; i < argc; i++){
-                create("folder", argv[i]);
+            if (strcmp(argv[1],"mdr") == 0){
+                for(int i = 2; i < argc; i++){
+                    create("folder", argv[i]);
+                }
             }
-        }
-    }
-    else if (strcmp(argv[1],"remove") == 0){
-        if(argc < 3){
-            printf("%s/n","number of args");
-        }
-        for(int i = 2; i < argc; i++){
-            destroy(argv[i]);
+            if (strcmp(argv[1],"move") == 0){
+                if(argc < 4 || argc > 4 ){
+                    printf("%s/n","wrong number of args");
+                }
+                move(argv[2],argv[3]);
+            }
         }
     }
     else if (argv[1][0] == 'r'){
-        if(strcmp(argv[1],"rfl") == 0){
-            for(int i = 2; i < argc; i++){
-                destroy("file", argv[i]);
+        if(argc < 3){
+            printf("%s/n","wrong number of args");
+        }    
+        else{
+            if(strcmp(argv[1],"rfl") == 0){
+                for(int i = 2; i < argc; i++){
+                    destroy("file", argv[i]);
+                }
+            }   
+            if (strcmp(argv[1],"rdr") == 0){
+                for(int i = 2; i < argc; i++){
+                    destroy("folder", argv[i]);
+                }
             }
-        }   
-        else if (strcmp(argv[1],"rdr") == 0){
-            for(int i = 2; i < argc; i++){
-                destroy("folder", argv[i]);
+            if (strcmp(argv[1],"remove") == 0){
+                for(int i = 2; i < argc; i++){
+                    destroy(argv[i]);
             }
         }
+    }
     }
     else if(strcmp(argv[1],"info") == 0){ 
         if(is_file(argv[2])){
