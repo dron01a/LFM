@@ -13,6 +13,15 @@ int main(int argc, char **argv){
     if(argc == 1){
         return 0; // if programm havent argv
     }
+    else if (strcmp(argv[1],"help") == 0){
+        printf("%s\n\t%s\n","mfl -> make file in work directory","Example: liza mfl test.cpp");
+        printf("%s\n\t%s\n","mdr -> make folder in work directory","Example: liza mdr test_folder");
+        printf("%s\n\t%s\n","rfl -> delete file in work directory","Example: liza rfl test.cpp");
+        printf("%s\n\t%s\n","rdr -> delete folder in work directory","Example: liza rdr test_folder");
+        printf("%s\n\t%s\n","remove -> delete folder/file in work directory","Example: liza remove test_folder");
+        printf("%s\n\t%s\n","info -> print info of folder/file","Example: liza info test.cpp");
+        printf("%s\n\t%s\n","move -> moves folder/file along the specified path","Example: liza move test.cpp test_folder");
+    }
     else if (argv[1][0] == 'm'){
         if(argc < 2){
             printf("%s/n","wrong number of args");
@@ -81,7 +90,7 @@ int main(int argc, char **argv){
         }
     }
     else{
-        printf("%s\n","Liza > unknown command");
+        printf("%s\n","Liza > unknown command,please call \"help\" to view the list of commands");
     }
     return 0;
 }
