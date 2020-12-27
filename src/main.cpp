@@ -13,80 +13,51 @@ int main(int argc, char **argv){
         return 0; // if programm havent argv
     }
     else if (strcmp(argv[1],"move") == 0){
-        try{
-            if(argc < 4 || argc > 4 ){
-                throw "number of args";
-            }
-            move(argv[2],argv[3]);
+        if(argc < 4 || argc > 4 ){
+            printf("%s/n","number of args");
         }
-        catch(std::string _err){
-            std::cout << _err << std::endl;
-        }
+        move(argv[2],argv[3]);
     }
     else if (argv[1][0] == 'm'){
-        try{
-            if(strcmp(argv[1],"mfl") == 0){
-                create("file", argv[2]);
-            }
-            else if (strcmp(argv[1],"mdr") == 0){
-                create("folder", argv[2]);
-            }
-            else{
-                throw "Liza > unknown command";
-            }
+        if(strcmp(argv[1],"mfl") == 0){
+            create("file", argv[2]);
         }
-        catch(std::string _err){
-            std::cout << _err << std::endl;
+        else if (strcmp(argv[1],"mdr") == 0){
+            create("folder", argv[2]);
         }
     }
     else if (argv[1][0] == 'r'){
-        try{
-            if(strcmp(argv[1],"rfl") == 0){
-                destroy("file", argv[2]);
-            }
-            else if (strcmp(argv[1],"rdr") == 0){
-                destroy("folder", argv[2]);
-            }
-            else{
-                throw "Liza > unknown command";
-            }
+        if(strcmp(argv[1],"rfl") == 0){
+            destroy("file", argv[2]);
         }
-        catch(std::string _err){
-            std::cout << _err << std::endl;
+        else if (strcmp(argv[1],"rdr") == 0){
+            destroy("folder", argv[2]);
         }
     }
     else if(strcmp(argv[1],"info") == 0){ 
         if(is_file(argv[2])){
             file * temp = new file(argv[2]);
-            std::cout << "File information:\n";
-            std::cout << temp->get_info().full_name << std::endl;
-            std::cout << "name: "<<temp->get_info().name << std::endl;
-            std::cout << "path: "<<temp->get_info().path << std::endl;
-            std::cout << "type: " <<temp->get_info().type << std::endl;
-            std::cout << "size: " <<temp->get_info().size << " bytes" << std::endl;
-            std::cout << "last modification: " <<temp->get_info().lm_day << ":" << temp->get_info().lm_month <<":" 
-                << temp->get_info().lm_year << " " << temp->get_info().lm_hour << ":"
-                << temp->get_info().lm_min << ":" << temp->get_info().lm_sec << std::endl;
+            printf("File information:\n%s\nsize:%i bytes\n",temp->get_info().full_name.c_str(),temp->get_info().size);
+            printf("last modification: %i:%i:%i:%i:%i:%i\n",temp->get_info().lm_day,
+                temp->get_info().lm_month,temp->get_info().lm_year,temp->get_info().lm_hour,
+                temp->get_info().lm_min, temp->get_info().lm_sec);
             delete temp;
         }
-        if(is_folder(argv[2])){
+        else if(is_folder(argv[2])){
             folder * temp = new folder(argv[2]);
-            std::cout << "File information:\n";
-            std::cout << temp->get_info().full_name << std::endl;
-            std::cout << "name: "<<temp->get_info().name << std::endl;
-            std::cout << "path: "<<temp->get_info().path << std::endl;
-            std::cout << "size: " <<temp->get_info().size << " bytes" << std::endl;
-            std::cout << "subdirs: " << temp->get_info().folders << std::endl;
-            std::cout << "files: " << temp->get_info().files << std::endl;
-            std::cout << "total: " << temp->get_info().elements << std::endl;
-            std::cout << "last modification: " <<temp->get_info().lm_day << ":" << temp->get_info().lm_month <<":" 
-                << temp->get_info().lm_year << " " << temp->get_info().lm_hour << ":"
-                << temp->get_info().lm_min << ":" << temp->get_info().lm_sec << std::endl;
+            printf("File information:\n%s\nsize:%i bytes",temp->get_info().full_name,temp->get_info().size);
+            printf("subdirs:%i\nfiles:%i\ntotal:%i\n",temp->get_info().folders,temp->get_info().files,temp->get_info().elements);
+            printf("last modification:%i:%i:%i:%i:%i:%i\n",temp->get_info().lm_day,
+                temp->get_info().lm_month,temp->get_info().lm_year,temp->get_info().lm_hour,
+                temp->get_info().lm_min, temp->get_info().lm_sec);
             delete temp;
+        }
+        else {
+            printf("%s\n","object not found");
         }
     }
     else{
-        std::cout << "Liza > unknown command\n";
+        printf("%s\n","Liza > unknown command");
     }
     return 0;
 }
@@ -100,13 +71,13 @@ void create(std::string type, std::string name){
         temp = new folder(name); 
     }
     if(temp->exists()){ 
-        std::cout << "liza > "<< type << " \""<< name <<"\" already exists\n";
+        printf("%s\n",std::string("liza > "+ type + " \"" + name +"\" already exists").c_str());
     }else{
         if(temp->create() == 0){
-            std::cout << "liza > "<< type << " \""<< name <<"\" created\n";
+            printf("%s\n",std::string("liza > " + type + " \"" + name + "\" created").c_str());
         }
         else{
-            throw "liza > " + type + " creation error";
+            printf("%s\n",std::string("liza > " + type + " creation error").c_str());
             delete temp;
         }
     }
@@ -122,11 +93,11 @@ void destroy(std::string type, std::string name){
         temp = new folder(name); 
     }
     if(!temp->exists()){ 
-        std::cout << "liza > "<< type << " \""<< name <<"\" not found\n";
+        printf("%s\n",std::string("liza > " + type + " \"" + name +"\" not found").c_str());
     }
     else{
         temp->destroy(); // delete 
-        std::cout << "liza > "<< type << " \""<< name <<"\" deleted\n";
+        printf("%s\n",std::string("liza > " + type + " \"" + name +"\" deleted").c_str());
     }
     delete temp; // free memory
 }
@@ -139,12 +110,12 @@ void move(std::string name, std::string path){
     if(is_folder(name)){
         temp = new folder(name); 
     }
-    if(!temp->exists()){ 
-        std::cout << "liza > \""<< name <<"\" not found\n";
+    if(!temp->exists()){         
+        printf("%s\n",std::string("liza > \"" + name + "\" not found").c_str());
     }
     else{
         temp->move(path); // delete 
-        std::cout << "liza > \""<< name <<"\" moved to \"" << path <<"\"\n";
+        printf("%s\n",std::string("liza > \"" + name +"\" moved to \"" + path +"\"\n").c_str());
     }
     delete temp; // free memory
 }

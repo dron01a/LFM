@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/media/armodrey/Cклад/projects/Liza(file manager)"
+CMAKE_SOURCE_DIR = "/media/armodrey/ARMODISK/projects/Liza(file manager)"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/media/armodrey/Cклад/projects/Liza(file manager)/build"
+CMAKE_BINARY_DIR = "/media/armodrey/ARMODISK/projects/Liza(file manager)/build"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/liza.dir/clean
 CMakeFiles/liza.dir/all:
 	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/depend
 	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/armodrey/Cклад/projects/Liza(file manager)/build/CMakeFiles" --progress-num=1,2,3,4,5 "Built target liza"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/media/armodrey/ARMODISK/projects/Liza(file manager)/build/CMakeFiles" --progress-num=1,2,3,4,5 "Built target liza"
 .PHONY : CMakeFiles/liza.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/liza.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/media/armodrey/Cклад/projects/Liza(file manager)/build/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/armodrey/ARMODISK/projects/Liza(file manager)/build/CMakeFiles" 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/liza.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/media/armodrey/Cклад/projects/Liza(file manager)/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/media/armodrey/ARMODISK/projects/Liza(file manager)/build/CMakeFiles" 0
 .PHONY : CMakeFiles/liza.dir/rule
 
 # Convenience name for target.
