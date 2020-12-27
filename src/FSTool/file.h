@@ -2,6 +2,7 @@
 #define __FILE__H__
 
 #include "FSTbase.h"
+#include "FSexception.h"
 #include <fstream>
 
 namespace FSTool {
@@ -39,14 +40,11 @@ namespace FSTool {
         void copy(std::string name);             // clone data in other file
         void move(std::string path);             // moves a file to the specified folder
         strvect get_elements_of_path();          // return elements of path
+        int find(std::string object, int begin = 0, int end = 0); //find object in file
     };
 
     // function return information of file
     _finfo file_information(std::string file_name);
-
-    // functions find object in file
-    int find(std::string file_name, int begin, int end, std::string object);
-    int find(std::string file_name, std::string object);
 
 };
 

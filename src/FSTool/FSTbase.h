@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "string.h"
 
 
@@ -30,8 +31,7 @@ namespace FSTool {
     //base class for folder and file
     class _base{ 
     public:
-
-
+    
         //virtual functions
         virtual std::string get(int index) = 0;     // get data fov index file system element
         virtual std::string back() = 0;             // return last element
@@ -42,6 +42,7 @@ namespace FSTool {
         virtual int destroy() = 0;                  // delete file
         virtual bool empty() = 0;                   // if file empty
         virtual void move(std::string path) = 0;    // move object to path 
+        virtual int find(std::string object, int begin = 0, int end = 0) = 0;
 
         //return first element 
         std::string front(){ 

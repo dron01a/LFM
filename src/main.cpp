@@ -21,10 +21,14 @@ int main(int argc, char **argv){
     }
     else if (argv[1][0] == 'm'){
         if(strcmp(argv[1],"mfl") == 0){
-            create("file", argv[2]);
+            for(int i = 2; i < argc; i++){
+                create("file", argv[i]);
+            }
         }
         else if (strcmp(argv[1],"mdr") == 0){
-            create("folder", argv[2]);
+            for(int i = 2; i < argc; i++){
+                create("folder", argv[i]);
+            }
         }
     }
     else if (strcmp(argv[1],"remove") == 0){
@@ -37,10 +41,14 @@ int main(int argc, char **argv){
     }
     else if (argv[1][0] == 'r'){
         if(strcmp(argv[1],"rfl") == 0){
-            destroy("file", argv[2]);
-        }
+            for(int i = 2; i < argc; i++){
+                destroy("file", argv[i]);
+            }
+        }   
         else if (strcmp(argv[1],"rdr") == 0){
-            destroy("folder", argv[2]);
+            for(int i = 2; i < argc; i++){
+                destroy("folder", argv[i]);
+            }
         }
     }
     else if(strcmp(argv[1],"info") == 0){ 
@@ -134,15 +142,14 @@ void destroy(std::string name){
     if(is_file(name)){ 
         temp = new file(name);  //if is file
     }
-    if(is_folder(name)){
+    else if(is_folder(name)){
         temp = new folder(name); //if is folder
     }
-    if(!temp->exists()){         
+    else {
         printf("%s\n",std::string("liza > \"" + name + "\" not found").c_str());
+        return;
     }
-    else{
-        temp->destroy(); // delete object 
-        printf("%s\n",std::string("liza > \"" + name + "\" deleted").c_str());
-    }
+    temp->destroy(); // delete object 
+    printf("%s\n",std::string("liza > \"" + name + "\" deleted").c_str());
     delete temp; // free memory
 }
