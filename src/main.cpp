@@ -6,6 +6,7 @@ using namespace FSTool;
 
 void create(std::string type, std::string name);    // create folder/file
 void destroy(std::string type, std::string name);   // destroy folder/file
+void destroy(std::string name);                     // destroy folder/file
 void move(std::string name, std::string path);      // move folde/file
 
 int main(int argc, char **argv){
@@ -24,6 +25,14 @@ int main(int argc, char **argv){
         }
         else if (strcmp(argv[1],"mdr") == 0){
             create("folder", argv[2]);
+        }
+    }
+    else if (strcmp(argv[1],"remove") == 0){
+        if(argc < 3){
+            printf("%s/n","number of args");
+        }
+        for(int i = 2; i < argc; i++){
+            destroy(argv[i]);
         }
     }
     else if (argv[1][0] == 'r'){
@@ -114,8 +123,26 @@ void move(std::string name, std::string path){
         printf("%s\n",std::string("liza > \"" + name + "\" not found").c_str());
     }
     else{
-        temp->move(path); // delete 
+        temp->move(path); // moving 
         printf("%s\n",std::string("liza > \"" + name +"\" moved to \"" + path +"\"\n").c_str());
+    }
+    delete temp; // free memory
+}
+
+void destroy(std::string name){
+    _base *temp; // base class 
+    if(is_file(name)){ 
+        temp = new file(name);  //if is file
+    }
+    if(is_folder(name)){
+        temp = new folder(name); //if is folder
+    }
+    if(!temp->exists()){         
+        printf("%s\n",std::string("liza > \"" + name + "\" not found").c_str());
+    }
+    else{
+        temp->destroy(); // delete object 
+        printf("%s\n",std::string("liza > \"" + name + "\" deleted").c_str());
     }
     delete temp; // free memory
 }
