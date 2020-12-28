@@ -15,18 +15,28 @@ string
 -
 vector
 -
+algorithm
+-
 string.h
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/string.h
 
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/FSTool.h
+FSTbase.h
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/FSTbase.h
 file.h
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/file.h
 folder.h
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/folder.h
 
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/FSexception.h
+string
+-
+
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/file.h
 FSTbase.h
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/FSTbase.h
+FSexception.h
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/FSexception.h
 fstream
 -
 
@@ -43,12 +53,24 @@ dos.h
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/dos.h
 FSTbase.h
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/FSTbase.h
+FSexception.h
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/FSexception.h
 vector
 -
 
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/main.cpp
+operations.h
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/operations.h
+message.h
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/message.h
+
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/message.h
+string
+-
+
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/operations.h
 FSTool/FSTool.h
 /media/armodrey/ARMODISK/projects/Liza(file manager)/src/FSTool/FSTool.h
-iostream
--
+message.h
+/media/armodrey/ARMODISK/projects/Liza(file manager)/src/message.h
 

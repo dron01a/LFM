@@ -1,1 +1,1 @@
-/usr/bin/c++   -Wall  -rdynamic CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o CMakeFiles/liza.dir/src/FSTool/file.cpp.o CMakeFiles/liza.dir/src/FSTool/folder.cpp.o CMakeFiles/liza.dir/src/main.cpp.o  -o liza 
+/usr/bin/c++   -Wall  -rdynamic CMakeFiles/liza.dir/src/FSTool/FSTool.cpp.o CMakeFiles/liza.dir/src/FSTool/file.cpp.o CMakeFiles/liza.dir/src/FSTool/folder.cpp.o CMakeFiles/liza.dir/src/main.cpp.o CMakeFiles/liza.dir/src/message.cpp.o CMakeFiles/liza.dir/src/operations.cpp.o  -o liza 

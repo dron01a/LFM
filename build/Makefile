@@ -231,6 +231,60 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/message.o: src/message.cpp.o
+
+.PHONY : src/message.o
+
+# target to build an object file
+src/message.cpp.o:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/message.cpp.o
+.PHONY : src/message.cpp.o
+
+src/message.i: src/message.cpp.i
+
+.PHONY : src/message.i
+
+# target to preprocess a source file
+src/message.cpp.i:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/message.cpp.i
+.PHONY : src/message.cpp.i
+
+src/message.s: src/message.cpp.s
+
+.PHONY : src/message.s
+
+# target to generate assembly for a file
+src/message.cpp.s:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/message.cpp.s
+.PHONY : src/message.cpp.s
+
+src/operations.o: src/operations.cpp.o
+
+.PHONY : src/operations.o
+
+# target to build an object file
+src/operations.cpp.o:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/operations.cpp.o
+.PHONY : src/operations.cpp.o
+
+src/operations.i: src/operations.cpp.i
+
+.PHONY : src/operations.i
+
+# target to preprocess a source file
+src/operations.cpp.i:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/operations.cpp.i
+.PHONY : src/operations.cpp.i
+
+src/operations.s: src/operations.cpp.s
+
+.PHONY : src/operations.s
+
+# target to generate assembly for a file
+src/operations.cpp.s:
+	$(MAKE) -f CMakeFiles/liza.dir/build.make CMakeFiles/liza.dir/src/operations.cpp.s
+.PHONY : src/operations.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +306,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/message.o"
+	@echo "... src/message.i"
+	@echo "... src/message.s"
+	@echo "... src/operations.o"
+	@echo "... src/operations.i"
+	@echo "... src/operations.s"
 .PHONY : help
 
 
