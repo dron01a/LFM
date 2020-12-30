@@ -13,7 +13,12 @@ std::string message::get_text(){
 }
 
 void message::add(std::string text){
-    this->text +="\n" + text;
+    if(this->text.size() == 0){
+        this->text = text;
+    }
+    else{
+        this->text += "\n" + text;
+    } 
 }
 
 void printMessage(message message){

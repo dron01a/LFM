@@ -106,3 +106,19 @@ void information(std::string name, message &result){
             result.set_text("object not found");
         }
 }
+
+void rename(std::string oldName, std::string newName, message &result){
+    int *res = new int(rename(oldName.c_str(), newName.c_str()));
+    if(*res != 0){
+        if(*res == ENOENT){
+            result.set_text("liza > \"" + oldName + "\" not found");
+        }
+        else{
+            result.set_text("liza > renaming error");
+        }
+    }
+    else{
+        result.set_text("liza > \"" + oldName + "\" renamed to \"" + newName + "\"");
+    }
+    delete res;
+}

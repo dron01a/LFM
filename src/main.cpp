@@ -65,6 +65,12 @@ int main(int argc, char **argv){
                     destroy(argv[i],resultMessage);
                 }
             }
+            if (strcmp(argv[1],"rename") == 0){
+                if(argc < 4 || argc > 4 ){
+                    resultMessage.set_text("wrong number of args");
+                }
+                rename(argv[2],argv[3],resultMessage);
+            }
         }
     }
     else if(strcmp(argv[1],"info") == 0){
