@@ -1,3 +1,0 @@
-/media/armodrey/ARMODISK/projects/Liza(file manager)/build/CMakeFiles/rebuild_cache.dir
-/media/armodrey/ARMODISK/projects/Liza(file manager)/build/CMakeFiles/edit_cache.dir
-/media/armodrey/ARMODISK/projects/Liza(file manager)/build/CMakeFiles/liza.dir

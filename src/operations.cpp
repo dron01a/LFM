@@ -80,31 +80,31 @@ void destroy(std::string name, message &result){
 
 void information(std::string name, message &result){
     if(is_file(name)){
-            file * temp = new file(name);
-            result.set_text("File information: " + temp->get_info().full_name);
-            result.add("size:" + std::to_string(temp->get_info().size) + " bytes");
-            result.add("last modification:" + std::to_string(temp->get_info().lm_day) + ":" 
-                + std::to_string(temp->get_info().lm_month) + ":" + std::to_string(temp->get_info().lm_year) + ":" 
-                + std::to_string(temp->get_info().lm_hour) + ":" + std::to_string(temp->get_info().lm_min) + ":"
-                + std::to_string(temp->get_info().lm_sec));
-            delete temp;
-        }
-        else if(is_folder(name)){
-            folder * temp = new folder(name);
-            result.set_text("File information: " + temp->get_info().full_name);
-            result.add("size:" + std::to_string(temp->get_info().size) + " bytes");
-            result.add("subdirs:" + std::to_string(temp->get_info().folders)); 
-            result.add("files:" + std::to_string(temp->get_info().files));
-            result.add("total:" + std::to_string(temp->get_info().elements));
-            result.add("last modification:" + std::to_string(temp->get_info().lm_day) + ":" 
-                + std::to_string(temp->get_info().lm_month) + ":" + std::to_string(temp->get_info().lm_year) + ":" 
-                + std::to_string(temp->get_info().lm_hour) + ":" + std::to_string(temp->get_info().lm_min) + ":"
-                + std::to_string(temp->get_info().lm_sec));
-            delete temp;
-        }
-        else {
-            result.set_text("object not found");
-        }
+        file * temp = new file(name);
+        result.set_text("File information: " + temp->full_name());
+        result.add("size:" + std::to_string(temp->size()) + " bytes");
+        result.add("last modification:" + std::to_string(temp->last_modification()->tm_mday) + ":" 
+            + std::to_string(temp->last_modification()->tm_mon) + ":" + std::to_string(temp->last_modification()->tm_year) + "\t" 
+            + std::to_string(temp->last_modification()->tm_hour) + ":" + std::to_string(temp->last_modification()->tm_min) + ":"
+            + std::to_string(temp->last_modification()->tm_sec));
+        delete temp;
+    }
+    else if(is_folder(name)){
+        folder * temp = new folder(name);
+        result.set_text("File information: " + temp->full_name());
+        result.add("size:" + std::to_string(temp->size()) + " bytes");
+        result.add("subdirs:" + std::to_string(temp->folders())); 
+        result.add("files:" + std::to_string(temp->files()));
+        result.add("total:" + std::to_string(temp->elements()));
+        result.add("last modification:" + std::to_string(temp->last_modification()->tm_mday) + ":" 
+            + std::to_string(temp->last_modification()->tm_mon) + ":" + std::to_string(temp->last_modification()->tm_year) + "\t"  
+            + std::to_string(temp->last_modification()->tm_hour) + ":" + std::to_string(temp->last_modification()->tm_min) + ":"
+            + std::to_string(temp->last_modification()->tm_sec));
+        delete temp;
+    }
+    else {
+        result.set_text("object not found");
+    }
 }
 
 void rename(std::string oldName, std::string newName, message &result){

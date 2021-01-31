@@ -5,9 +5,12 @@ set (CMAKE_CXX_FLAGS "${CMAKE_FLAGS} -std=c++17")
 
 set (CMAKE_CXX_FLAGS "${CMAKE_FLAGS} -Wall")
 
-file(GLOB CPPS "./src/*.cpp"
-          FsPPS "./src/FSTool/*.cpp")
+include_directories(libs/FSTool/src)
 
-add_executable(liza ${CPPS} ${FsPPS})
+file(GLOB CPPS "./src/*.cpp")
 
+add_executable(liza ${CPPS})
 
+add_subdirectory(libs/FSTool)
+
+target_link_libraries(liza FSTool)

@@ -3,6 +3,9 @@
 Component for Linux that performs operations with the file system using commands <br/>
 Designed for quick operations with files and folders<br/>
 
+Used LIBS:<br/>
+    FSTool: https://github.com/ARmodRey/FSTool.git<br/>
+
 ## List of commands
 
 ### Commands to create
