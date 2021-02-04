@@ -7,10 +7,8 @@ int main(int argc, char **argv){
     config config; 
     loadConfig("config.txt",config);
     logger * log= new logger("log.txt");  // result of the program
-    log->setMode(config.mode);
-    if(log->mode() == "log"){
-        log->add(argc, argv);
-    }
+    log->loadSettings(config);
+    log->add(argc, argv);
     if (strcmp(argv[1],"help") == 0){
         if(log->mode() != "log"){
             log->add("Help:");
