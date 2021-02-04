@@ -1,7 +1,6 @@
 .vscode 
-
+build
 test/ 
-
-./build 
+./build/
 
 src/FSTool/

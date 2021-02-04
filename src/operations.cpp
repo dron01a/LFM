@@ -2,7 +2,7 @@
 
 using namespace FSTool;
 
-void create(std::string type, std::string name, message &result){
+void create(std::string type, std::string name, logger &result){
     _base *temp; // temp object
     if(type == "file"){
         temp = new file(name); 
@@ -25,7 +25,7 @@ void create(std::string type, std::string name, message &result){
     delete temp;
 }
 
-void destroy(std::string type, std::string name, message &result){
+void destroy(std::string type, std::string name, logger &result){
     _base *temp; // temp object
     if(type == "file"){
         temp = new file(name); 
@@ -43,7 +43,7 @@ void destroy(std::string type, std::string name, message &result){
     delete temp; // free memory
 }
 
-void move(std::string name, std::string path, message &result){
+void move(std::string name, std::string path, logger &result){
     _base *temp; // temp object
     if(is_file(name)){
         temp = new file(name); 
@@ -61,7 +61,7 @@ void move(std::string name, std::string path, message &result){
     delete temp; // free memory
 }
 
-void destroy(std::string name, message &result){
+void destroy(std::string name, logger &result){
     _base *temp; // base class 
     if(is_file(name)){ 
         temp = new file(name);  //if is file
@@ -78,10 +78,10 @@ void destroy(std::string name, message &result){
     delete temp; // free memory
 }
 
-void information(std::string name, message &result){
+void information(std::string name, logger &result){
     if(is_file(name)){
         file * temp = new file(name);
-        result.set_text("File information: " + temp->full_name());
+        result.add("File information: " + temp->full_name());
         result.add("size:" + std::to_string(temp->size()) + " bytes");
         result.add("last modification:" + std::to_string(temp->last_modification()->tm_mday) + ":" 
             + std::to_string(temp->last_modification()->tm_mon) + ":" + std::to_string(temp->last_modification()->tm_year) + "\t" 
@@ -91,7 +91,7 @@ void information(std::string name, message &result){
     }
     else if(is_folder(name)){
         folder * temp = new folder(name);
-        result.set_text("File information: " + temp->full_name());
+        result.add("File information: " + temp->full_name());
         result.add("size:" + std::to_string(temp->size()) + " bytes");
         result.add("subdirs:" + std::to_string(temp->folders())); 
         result.add("files:" + std::to_string(temp->files()));
@@ -103,22 +103,22 @@ void information(std::string name, message &result){
         delete temp;
     }
     else {
-        result.set_text("object not found");
+        result.add("object not found");
     }
 }
 
-void rename(std::string oldName, std::string newName, message &result){
+void rename(std::string oldName, std::string newName, logger &result){
     int *res = new int(rename(oldName.c_str(), newName.c_str()));
     if(*res != 0){
         if(*res == ENOENT){
-            result.set_text("liza > \"" + oldName + "\" not found");
+            result.add("liza > \"" + oldName + "\" not found");
         }
         else{
-            result.set_text("liza > renaming error");
+            result.add("liza > renaming error");
         }
     }
     else{
-        result.set_text("liza > \"" + oldName + "\" renamed to \"" + newName + "\"");
+        result.add("liza > \"" + oldName + "\" renamed to \"" + newName + "\"");
     }
     delete res;
 }
