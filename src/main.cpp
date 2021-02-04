@@ -3,10 +3,14 @@
 
 using namespace FSTool;
 
+std::string homeDir = std::getenv("HOME");                       // home dir
+std::string configPath = homeDir + "/.armodrey/liza/config.txt"; // path to config 
+std::string logPath = homeDir + "/.armodrey/liza/log.txt";       // path to log 
+
 int main(int argc, char **argv){
     config config; 
-    loadConfig("config.txt",config);
-    logger * log= new logger("log.txt");  // result of the program
+    loadConfig(configPath,config);
+    logger * log = new logger(logPath);  // result of the program
     log->loadSettings(config);
     log->add(argc, argv);
     if (strcmp(argv[1],"help") == 0){
@@ -30,7 +34,7 @@ int main(int argc, char **argv){
     }
     else if (argv[1][0] == 'm'){
         if(argc < 2){
-            log->add("wrong number of args");
+            log->add("wrong number of args"); // if bad args 
         }
         else{
             if(strcmp(argv[1],"mfl") == 0){
@@ -83,7 +87,9 @@ int main(int argc, char **argv){
         information(argv[2],*log);
     }
     else{
-      log->add("Liza > unknown command,please call \"help\" to view the list of commands");
+        if(log->mode() != "log"){
+            log->add("Liza > unknown command,please call \"help\" to view the list of commands");
+        }
     }
     delete log;
     return 0;

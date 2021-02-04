@@ -77,8 +77,7 @@ void loadConfig(std::string filename, config & _config){
         }
         if(confLine[count] == "format"){
             _config.format = confLine[count+1];
-        }
-        
+        }        
     }
 }
 
