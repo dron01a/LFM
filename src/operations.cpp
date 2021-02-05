@@ -11,14 +11,14 @@ void create(std::string type, std::string name, logger &result){
         temp = new folder(name); 
     }
     if(temp->exists()){ 
-        result.add("liza > "+ type + " \"" + name +"\" already exists");
+        result.add("liza > "+ type + " \"" + name +"\" <EXISTS>");
     }
     else{
         if(temp->create() == 0){
-            result.add("liza > " + type + " \"" + name + "\" created");
+            result.add("liza > " + type + " \"" + name + "\" <CREATED>");
         }
         else{
-            result.add("liza > " + type + " creation error");
+            result.add("liza > " + type + " <C_ERROR>");
             delete temp;
         }
     }
@@ -34,11 +34,11 @@ void destroy(std::string type, std::string name, logger &result){
         temp = new folder(name); 
     }
     if(!temp->exists()){ 
-        result.add("liza > "+ type + " \"" + name +"\" ot found");
+        result.add("liza > "+ type + " \"" + name +"\" <NOT_FOUND>");
     }
     else{
         temp->destroy(); // delete 
-        result.add("liza > " + type + " \"" + name +"\" deleted");
+        result.add("liza > " + type + " \"" + name +"\" <DELETED>");
     }
     delete temp; // free memory
 }
@@ -52,11 +52,11 @@ void move(std::string name, std::string path, logger &result){
         temp = new folder(name); 
     }
     if(!temp->exists()){         
-        result.add("liza > \"" + name + "\" not found");
+        result.add("liza > \"" + name + "\" <NOT_FOUND>");
     }
     else{
         temp->move(path); // moving 
-        result.add("liza > \"" + name +"\" moved to \"" + path +"\"");
+        result.add("liza > \"" + name +"\" <MOVE> \"" + path +"\"");
     }
     delete temp; // free memory
 }
@@ -70,20 +70,20 @@ void destroy(std::string name, logger &result){
         temp = new folder(name); //if is folder
     }
     else {
-        result.add("liza > \"" + name +"\" ot found");
+        result.add("liza > \"" + name +"\" <NOT_FOUND>");
         return;
     }
     temp->destroy(); // delete object 
-    result.add("liza > \"" + name +"\" deleted");
+    result.add("liza > \"" + name +"\" <DELETED>");
     delete temp; // free memory
 }
 
 void information(std::string name, logger &result){
     if(is_file(name)){
         file * temp = new file(name);
-        result.add("File information: " + temp->full_name());
-        result.add("size:" + std::to_string(temp->size()) + " bytes");
-        result.add("last modification:" + std::to_string(temp->last_modification()->tm_mday) + ":" 
+        result.add("<FILE_INFO>: " + temp->full_name());
+        result.add("<SIZE>: " + std::to_string(temp->size()) + " <BYTES>");
+        result.add("<L_MOD>: " + std::to_string(temp->last_modification()->tm_mday) + ":" 
             + std::to_string(temp->last_modification()->tm_mon) + ":" + std::to_string(temp->last_modification()->tm_year) + "\t" 
             + std::to_string(temp->last_modification()->tm_hour) + ":" + std::to_string(temp->last_modification()->tm_min) + ":"
             + std::to_string(temp->last_modification()->tm_sec));
@@ -91,19 +91,19 @@ void information(std::string name, logger &result){
     }
     else if(is_folder(name)){
         folder * temp = new folder(name);
-        result.add("File information: " + temp->full_name());
-        result.add("size:" + std::to_string(temp->size()) + " bytes");
-        result.add("subdirs:" + std::to_string(temp->folders())); 
-        result.add("files:" + std::to_string(temp->files()));
-        result.add("total:" + std::to_string(temp->elements()));
-        result.add("last modification:" + std::to_string(temp->last_modification()->tm_mday) + ":" 
+        result.add("<FILE_INFO>: " + temp->full_name());
+        result.add("<SIZE>: " + std::to_string(temp->size()) + " <BYTES>");
+        result.add("<SUB_DR>: " + std::to_string(temp->folders())); 
+        result.add("<FILES>: " + std::to_string(temp->files()));
+        result.add("<TOTAL_FL>: " + std::to_string(temp->elements()));
+        result.add("<L_MOD>: " + std::to_string(temp->last_modification()->tm_mday) + ":" 
             + std::to_string(temp->last_modification()->tm_mon) + ":" + std::to_string(temp->last_modification()->tm_year) + "\t"  
             + std::to_string(temp->last_modification()->tm_hour) + ":" + std::to_string(temp->last_modification()->tm_min) + ":"
             + std::to_string(temp->last_modification()->tm_sec));
         delete temp;
     }
     else {
-        result.add("object not found");
+        result.add(name + " <NOT_FOUND>");
     }
 }
 
@@ -111,14 +111,14 @@ void rename(std::string oldName, std::string newName, logger &result){
     int *res = new int(rename(oldName.c_str(), newName.c_str()));
     if(*res != 0){
         if(*res == ENOENT){
-            result.add("liza > \"" + oldName + "\" not found");
+            result.add("liza > \"" + oldName + "\" <NOT_FOUND>");
         }
         else{
-            result.add("liza > renaming error");
+            result.add("liza > <RENAME_ERROR>");
         }
     }
     else{
-        result.add("liza > \"" + oldName + "\" renamed to \"" + newName + "\"");
+        result.add("liza > \"" + oldName + "\" <RENAME> \"" + newName + "\"");
     }
     delete res;
 }

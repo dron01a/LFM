@@ -27,10 +27,10 @@ public:
     void loadSettings(config config); // load config  
     std::string mode();               // return output mode    
     std::string text();               // return message text
+    void setText(std::string text);   // reset message text
     void add(std::string text);       // added text to message
     void add(int argc, char **argv);  // set args tolog
 };
-
 
 // check file with program settings
 void checkConfig(std::string filename); 

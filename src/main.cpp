@@ -1,40 +1,28 @@
 #include "operations.h"
 #include "settings.h"
+#include "localization.h"
 
 using namespace FSTool;
 
-std::string homeDir = std::getenv("HOME");                       // home dir
-std::string configPath = homeDir + "/.armodrey/liza/config.txt"; // path to config 
-std::string logPath = homeDir + "/.armodrey/liza/log.txt";       // path to log 
-
 int main(int argc, char **argv){
+    std::string homeDir = std::getenv("HOME");                         // home dir
+    std::string configPath = homeDir + "/.armodrey/liza/config.txt";   // path to config 
+    std::string logPath = homeDir + "/.armodrey/liza/log.txt";         // path to log 
+    std::string localPath = homeDir + "/.armodrey/liza/localization/"; // path to localization
     config config; 
     loadConfig(configPath,config);
+    localPath += config.lang;
     logger * log = new logger(logPath);  // result of the program
     log->loadSettings(config);
     log->add(argc, argv);
     if (strcmp(argv[1],"help") == 0){
         if(log->mode() != "log"){
-            log->add("Help:");
-            log->add("mfl -> make file in work directory");
-            log->add("\tExample: liza mfl test.cpp");
-            log->add("mdr -> make folder in work directory");
-            log->add("\tExample: liza mdr test_folder");
-            log->add("rfl -> delete file in work directory");
-            log->add("\tExample: liza rfl test.cpp");
-            log->add("rdr -> delete folder in work directory");
-            log->add("\tExample: liza rdr test_folder");
-            log->add("remove -> delete folder/file in work directory");
-            log->add("\tExample: liza remove test_folder");
-            log->add("info -> print info of folder/file");
-            log->add("\tExample: liza info test.cpp");
-            log->add("move -> moves folder/file along the specified path");
-            log->add("\tExample: liza move test.cpp test_folder");
+            log->add("<HELP>");
         }
     }
     else if (argv[1][0] == 'm'){
         if(argc < 2){
-            log->add("wrong number of args"); // if bad args 
+            log->add("<WRONG_ARGS>"); // if bad args 
         }
         else{
             if(strcmp(argv[1],"mfl") == 0){
@@ -49,7 +37,7 @@ int main(int argc, char **argv){
             }
             if (strcmp(argv[1],"move") == 0){
                 if(argc < 4 || argc > 4 ){
-                    log->add("wrong number of args");
+                    log->add("<WRONG_ARGS>");
                 }
                 move(argv[2],argv[3],*log);
             }
@@ -57,7 +45,7 @@ int main(int argc, char **argv){
     }
     else if (argv[1][0] == 'r'){
         if(argc < 3){
-            log->add("wrong number of args");
+            log->add("<WRONG_ARGS>");
         }    
         else{
             if(strcmp(argv[1],"rfl") == 0){
@@ -77,7 +65,7 @@ int main(int argc, char **argv){
             }
             if (strcmp(argv[1],"rename") == 0){
                 if(argc < 4 || argc > 4 ){
-                    log->add("wrong number of args");
+                    log->add("<WRONG_ARGS>");
                 }
                 rename(argv[2],argv[3],*log);
             }
@@ -88,9 +76,10 @@ int main(int argc, char **argv){
     }
     else{
         if(log->mode() != "log"){
-            log->add("Liza > unknown command,please call \"help\" to view the list of commands");
+            log->add("<NON_COMMAND>");
         }
     }
+    log->setText(localization(localPath,log->text())); 
     delete log;
     return 0;
 }

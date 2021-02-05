@@ -44,6 +44,10 @@ std::string logger::text(){
     return _text;
 }
 
+void logger::setText(std::string text){
+    _text = text;
+}
+
 void logger::add(std::string text){
     if(_text.size() == 0){
         _text = text;
