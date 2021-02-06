@@ -49,7 +49,7 @@ renaming error
 </RENAME_ERROR>
 
 <FILE_INFO>
-File information
+Information
 </FILE_INFO>
 
 <SIZE>
