@@ -4,10 +4,10 @@ using namespace FSTool;
 
 void create(std::string type, std::string name, logger &result){
     _base *temp; // temp object
-    if(type == "file"){
+    if(type == "<FILE>"){
         temp = new file(name); 
     }
-    if(type == "folder"){
+    if(type == "<FOLDER>"){
         temp = new folder(name); 
     }
     if(temp->exists()){ 
@@ -27,10 +27,10 @@ void create(std::string type, std::string name, logger &result){
 
 void destroy(std::string type, std::string name, logger &result){
     _base *temp; // temp object
-    if(type == "file"){
+    if(type == "<FILE>"){
         temp = new file(name); 
     }
-    if(type == "folder"){
+    if(type == "<FOLDER>"){
         temp = new folder(name); 
     }
     if(!temp->exists()){ 

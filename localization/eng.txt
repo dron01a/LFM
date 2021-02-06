@@ -75,3 +75,11 @@ subdirs
 <TOTAL_FL>
 total
 </TOTAL_FL>
+
+<FOLDER>
+folder
+</FOLDER>
+
+<FILE>
+file
+</FILE>

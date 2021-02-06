@@ -27,12 +27,12 @@ int main(int argc, char **argv){
         else{
             if(strcmp(argv[1],"mfl") == 0){
                 for(int i = 2; i < argc; i++){
-                    create("file", argv[i],*log);
+                    create("<FILE>", argv[i],*log);
                 }
             }
             if (strcmp(argv[1],"mdr") == 0){
                 for(int i = 2; i < argc; i++){
-                    create("folder", argv[i],*log);
+                    create("<FOLDER>", argv[i],*log);
                 }
             }
             if (strcmp(argv[1],"move") == 0){
@@ -50,12 +50,12 @@ int main(int argc, char **argv){
         else{
             if(strcmp(argv[1],"rfl") == 0){
                 for(int i = 2; i < argc; i++){
-                    destroy("file", argv[i],*log);
+                    destroy("<FILE>", argv[i],*log);
                 }
             }   
             if (strcmp(argv[1],"rdr") == 0){
                 for(int i = 2; i < argc; i++){
-                    destroy("folder", argv[i],*log);
+                    destroy("<FOLDER>", argv[i],*log);
                 }
             }
             if (strcmp(argv[1],"remove") == 0){

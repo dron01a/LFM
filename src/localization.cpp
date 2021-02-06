@@ -15,7 +15,6 @@ std::string localization(std::string locFile, std::string text){
         for (int count = beginTAG + 1; count < endTAG; count++){
             tagText += loc.get(count); // add text to translation
         }
-        printf("%s\n", tagText.c_str());
         message.edit(found,tagText); // replase tag from tag text
         found = message.find("<");
     }
