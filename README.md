@@ -5,6 +5,7 @@ Designed for quick operations with files and folders<br/>
 
 Used LIBS:<br/>
     FSTool: https://github.com/ARmodRey/FSTool.git<br/>
+    WPTool: https://github.com/ARmodRey/WPTool.git<br/>
 
 ## List of commands
 

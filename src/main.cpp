@@ -20,56 +20,54 @@ int main(int argc, char **argv){
             log->add("<HELP>");
         }
     }
-    else if (argv[1][0] == 'm'){
-        if(argc < 2){
+    else if(strcmp(argv[1],"mfl") == 0){
+        if(argc < 3){
             log->add("<WRONG_ARGS>"); // if bad args 
         }
-        else{
-            if(strcmp(argv[1],"mfl") == 0){
-                for(int i = 2; i < argc; i++){
-                    create("<FILE>", argv[i],*log);
-                }
-            }
-            if (strcmp(argv[1],"mdr") == 0){
-                for(int i = 2; i < argc; i++){
-                    create("<FOLDER>", argv[i],*log);
-                }
-            }
-            if (strcmp(argv[1],"move") == 0){
-                if(argc < 4 || argc > 4 ){
-                    log->add("<WRONG_ARGS>");
-                }
-                move(argv[2],argv[3],*log);
-            }
+        for(int i = 2; i < argc; i++){
+            create("<FILE>", argv[i],*log);
         }
     }
-    else if (argv[1][0] == 'r'){
+    else if (strcmp(argv[1],"mdr") == 0){
+        if(argc < 3){
+            log->add("<WRONG_ARGS>"); // if bad args 
+        }
+        for(int i = 2; i < argc; i++){
+            create("<FOLDER>", argv[i],*log);
+        }
+    }
+    else if (strcmp(argv[1],"move") == 0){
+        if(argc < 4 || argc > 4 ){
+            log->add("<WRONG_ARGS>");
+        }
+        move(argv[2],argv[3],*log);
+    }
+    else if(strcmp(argv[1],"rfl") == 0){
         if(argc < 3){
             log->add("<WRONG_ARGS>");
         }    
-        else{
-            if(strcmp(argv[1],"rfl") == 0){
-                for(int i = 2; i < argc; i++){
-                    destroy("<FILE>", argv[i],*log);
-                }
-            }   
-            if (strcmp(argv[1],"rdr") == 0){
-                for(int i = 2; i < argc; i++){
-                    destroy("<FOLDER>", argv[i],*log);
-                }
-            }
-            if (strcmp(argv[1],"remove") == 0){
-                for(int i = 2; i < argc; i++){
-                    destroy(argv[i],*log);
-                }
-            }
-            if (strcmp(argv[1],"rename") == 0){
-                if(argc < 4 || argc > 4 ){
-                    log->add("<WRONG_ARGS>");
-                }
-                rename(argv[2],argv[3],*log);
-            }
+        for(int i = 2; i < argc; i++){
+            destroy("<FILE>", argv[i],*log);
         }
+    }   
+    else if (strcmp(argv[1],"rdr") == 0){
+        if(argc < 3){
+            log->add("<WRONG_ARGS>");
+        }    
+        for(int i = 2; i < argc; i++){
+            destroy("<FOLDER>", argv[i],*log);
+        }
+    }
+    else if (strcmp(argv[1],"remove") == 0){
+        for(int i = 2; i < argc; i++){
+            destroy(argv[i],*log);
+        }
+    }
+    else if (strcmp(argv[1],"rename") == 0){
+        if(argc < 4 || argc > 4 ){
+            log->add("<WRONG_ARGS>");
+        }
+        rename(argv[2],argv[3],*log);
     }
     else if(strcmp(argv[1],"info") == 0){
         information(argv[2],*log);
