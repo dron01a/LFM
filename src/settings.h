@@ -1,8 +1,8 @@
 #ifndef __SET_H__
 #define __SET_H__
 
-#include "FSTool.h"
-#include "WPTool.h"
+#include "FSTool/FSTool.h"
+#include "WPTool/WPTool.h"
 
 using namespace FSTool;
 using namespace WPTool;

@@ -2,5 +2,3 @@
 build
 test/ 
 ./build/
-
-src/FSTool/
