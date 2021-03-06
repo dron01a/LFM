@@ -15,6 +15,9 @@ EXECUTABLE=liza
 
 all: liza
 
+clean: 
+	rm -rf *.o *.a liza
+
 file.o: src/FSTool/file.cpp
 	g++ src/FSTool/file.cpp -c -o file.o
 
@@ -36,4 +39,4 @@ wptool.a: src/WPTool/WPTool.cpp
 
 liza: fstool.a wptool.a 
 	$(CC) $(SOURCES_PATH) fstool.a wptool.a -o liza
-
+	

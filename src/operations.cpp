@@ -2,7 +2,7 @@
 
 using namespace FSTool;
 
-void create(std::string type, std::string name, logger &result){
+void create(std::string type, std::string name, message &result){
     _base *temp; // temp object
     if(type == "<FILE>"){
         temp = new file(name); 
@@ -25,7 +25,7 @@ void create(std::string type, std::string name, logger &result){
     delete temp;
 }
 
-void destroy(std::string type, std::string name, logger &result){
+void destroy(std::string type, std::string name, message &result){
     _base *temp; // temp object
     if(type == "<FILE>"){
         temp = new file(name); 
@@ -43,7 +43,7 @@ void destroy(std::string type, std::string name, logger &result){
     delete temp; // free memory
 }
 
-void move(std::string name, std::string path, logger &result){
+void move(std::string name, std::string path, message &result){
     _base *temp; // temp object
     if(is_file(name)){
         temp = new file(name); 
@@ -61,7 +61,7 @@ void move(std::string name, std::string path, logger &result){
     delete temp; // free memory
 }
 
-void destroy(std::string name, logger &result){
+void destroy(std::string name, message &result){
     _base *temp; // base class 
     if(is_file(name)){ 
         temp = new file(name);  //if is file
@@ -78,7 +78,7 @@ void destroy(std::string name, logger &result){
     delete temp; // free memory
 }
 
-void information(std::string name, logger &result){
+void information(std::string name, message &result){
     if(is_file(name)){
         file * temp = new file(name);
         result.add("<FILE_INFO>: " + temp->full_name());
@@ -107,7 +107,7 @@ void information(std::string name, logger &result){
     }
 }
 
-void rename(std::string oldName, std::string newName, logger &result){
+void rename(std::string oldName, std::string newName, message &result){
     int *res = new int(rename(oldName.c_str(), newName.c_str()));
     if(*res != 0){
         if(*res == ENOENT){
