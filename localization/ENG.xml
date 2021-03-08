@@ -9,61 +9,31 @@
         info -> print info of folder/file\n\tExample: liza info test.cpp
         move -> moves folder/file along the specified path\n\tExample: liza move test.cpp test_folder
     </HELP>
-    <WRONG_ARGS>
-        wrong number of args
-    </WRONG_ARGS>
-    <NON_COMMAND>
-        Liza > unknown command,please call \"help\" to view the list of commands
-    </NON_COMMAND>
-    <EXISTS>
-        already exists
-    </EXISTS>
-    <CREATED>
-        created
-    </CREATED>
-    <C_ERROR>
-        creation error
-    </C_ERROR>
-    <NOT_FOUND>
-        not found
+    <WRONG_ARGS>wrong number of args</WRONG_ARGS>
+    <NON_COMMAND>Liza > unknown command,please call \"help\" to view the list of commands</NON_COMMAND>
+    <EXISTS>already exists</EXISTS>
+    <CREATED>created</CREATED>
+    <C_ERROR>creation error</C_ERROR>
+    <NOT_FOUND>not found
     </NOT_FOUND>
-    <MOVE>
-        moved to 
+    <MOVE>moved to 
     </MOVE>
-    <DELETED>
-        deleted
+    <DELETED>deleted
     </DELETED>
-    <RENAME>
-        renamed to
+    <RENAME>renamed to
     </RENAME>
-    <RENAME_ERROR>
-        renaming error
+    <RENAME_ERROR>renaming error
     </RENAME_ERROR>
-    <FILE_INFO>
-        Information
+    <FILE_INFO>Information
     </FILE_INFO>
-    <SIZE>
-        size
-    </SIZE>
-    <BYTES>
-        bytes
+    <SIZE>size</SIZE>
+    <BYTES>bytes
     </BYTES>
-    <L_MOD>
-        last modification
-    </L_MOD>
-    <FILES>
-        files
-    </FILES>
-    <SUB_DR>
-        subdirs
+    <L_MOD>last modification</L_MOD>
+    <FILES>files</FILES>
+    <SUB_DR>subdirs
     </SUB_DR>
-    <TOTAL_FL>
-        total
-    </TOTAL_FL>
-    <FOLDER>
-    folder
-    </FOLDER>
-    <FILE>
-        file
-    </FILE>
+    <TOTAL_FL>total</TOTAL_FL>
+    <FOLDER>folder</FOLDER>
+    <FILE>file</FILE>
 </LOCALIZATION>
