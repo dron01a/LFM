@@ -3,9 +3,15 @@
 Component for Linux that performs operations with the file system using commands <br/>
 Designed for quick operations with files and folders<br/>
 
-Used LIBS:<br/>
-    FSTool: https://github.com/ARmodRey/FSTool.git<br/>
-    WPTool: https://github.com/ARmodRey/WPTool.git<br/>
+## Used LIBS:
+    FSTool: https://github.com/ARmodRey/FSTool.git
+    WPTool: https://github.com/ARmodRey/WPTool.git
+    SXML: https://github.com/ARmodRey/SXML.git
+
+#### install
+    git clone https://github.com/ARmodRey/LFM.git
+    make
+    make install
 
 ## List of commands
 
@@ -19,6 +25,7 @@ Used LIBS:<br/>
         Example: liza rfl test.cpp
     rdr -> delete folder in work directory
         Example: liza rdr test_folder
+    remove -> delete file/folder in work directori
 ### Other commands
     info -> print info of folder/file
         Example: liza info test.cpp
