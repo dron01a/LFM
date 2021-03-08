@@ -8,9 +8,9 @@ using namespace FSTool;
 
 int main(int argc, char **argv){
     std::string homeDir = std::getenv("HOME");                         // home dir
-    std::string configPath = homeDir + "/.armodrey/liza/config.txt";   // path to config 
-    std::string logPath = homeDir + "/.armodrey/liza/log.txt";         // path to log 
-    std::string localPath = homeDir + "/.armodrey/liza/localization/"; // path to localization
+    std::string configPath = homeDir + "/.liza/config.txt";   // path to config 
+    std::string logPath = homeDir + "/.liza/log.txt";         // path to log 
+    std::string localPath = homeDir + "/.liza/localization/"; // path to localization
     config config; 
     loadConfig(configPath,config);
     localPath += config.lang;
