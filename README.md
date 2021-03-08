@@ -31,12 +31,3 @@ Designed for quick operations with files and folders<br/>
         Example: liza info test.cpp
     move -> moves folder/file along the specified path
         Example: liza move test.cpp test_folder
-
-## Сhanges
-
-v 0.1.0:
-
-    add functions mfl,rdr,rfl,fdr
-v 0.1.5:
-
-    add functions info, move

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LOCALIZATION loc = "rus" >
-    <HELP>
-        Справка:\nmfl -> создать файл в рабочем каталоге\n\tПример: liza mfl test.cpp
+<LOCALIZATION loc = "rus">
+    <HELP> Справка:\nmfl -> создать файл в рабочем каталоге\n\tПример: liza mfl test.cpp
         mdr -> создать папку в рабочем каталоге\n\tПример: liza mdr test_folder
         rfl -> удалить файл в рабочем каталоге\n\tПример: liza rfl test.cpp
         rdr -> удалить папку в рабочем каталоге\n\tПример: liza rdr test_folder
@@ -15,7 +14,7 @@
     <NON_COMMAND>
         Liza > неизвестная команда, пожалуйста, напишите \"help\", чтобы просмотреть список команд
     </NON_COMMAND>
-    <EXISTS>
+    <EXISTS> 
         уже существует
     </EXISTS>
     <CREATED>
@@ -64,6 +63,6 @@
         папка
     </FOLDER>
     <FILE>
-        файл
+        файл 
     </FILE>
 </LOCALIZATION>

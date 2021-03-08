@@ -13,7 +13,7 @@
 - function remove
 - add russian localization
 - add english localization
-- cofig file with settings
+- config file with settings
 
 ### Fixed
 
