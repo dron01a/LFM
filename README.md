@@ -3,12 +3,12 @@
 Component for Linux that performs operations with the file system using commands <br/>
 Designed for quick operations with files and folders<br/>
 
-## Used LIBS:
+## Used source code of LIBSs  :
     FSTool: https://github.com/ARmodRey/FSTool.git
     WPTool: https://github.com/ARmodRey/WPTool.git
     SXML: https://github.com/ARmodRey/SXML.git
-
-#### install
+    
+#### Install
     git clone https://github.com/ARmodRey/LFM.git
     make
     make install

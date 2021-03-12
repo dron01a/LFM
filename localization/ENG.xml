@@ -14,25 +14,17 @@
     <EXISTS>already exists</EXISTS>
     <CREATED>created</CREATED>
     <C_ERROR>creation error</C_ERROR>
-    <NOT_FOUND>not found
-    </NOT_FOUND>
-    <MOVE>moved to 
-    </MOVE>
-    <DELETED>deleted
-    </DELETED>
-    <RENAME>renamed to
-    </RENAME>
-    <RENAME_ERROR>renaming error
-    </RENAME_ERROR>
-    <FILE_INFO>Information
-    </FILE_INFO>
+    <NOT_FOUND>not found</NOT_FOUND>
+    <MOVE>moved to</MOVE>
+    <DELETED>deleted</DELETED>
+    <RENAME>renamed to</RENAME>
+    <RENAME_ERROR>renaming error</RENAME_ERROR>
+    <FILE_INFO>Information</FILE_INFO>
     <SIZE>size</SIZE>
-    <BYTES>bytes
-    </BYTES>
+    <BYTES>bytes</BYTES>
     <L_MOD>last modification</L_MOD>
     <FILES>files</FILES>
-    <SUB_DR>subdirs
-    </SUB_DR>
+    <SUB_DR>subdirs</SUB_DR>
     <TOTAL_FL>total</TOTAL_FL>
     <FOLDER>folder</FOLDER>
     <FILE>file</FILE>
