@@ -1,3 +1,5 @@
+.PHONY: all clean install
+
 CC=g++
 CFLAGS=-c -Wall
 
@@ -17,8 +19,6 @@ SOURCES_PATH=./src/*.cpp
 
 # name of executable file   
 EXECUTABLE=liza
-
-.PHONY: all clean install 
 
 all: ${EXECUTABLE}
 

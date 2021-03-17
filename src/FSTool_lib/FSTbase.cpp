@@ -12,11 +12,11 @@ bool FSTool::exists(std::string path){
     return true; // if path found 
 }
 
-FSTool::_base::_base(std::string name, std::string path){
+FSTool::FST_object::FST_object(std::string name, std::string path){
     _updateFullName(path,name);
 }
 
-FSTool::_base::_base(std::string name){
+FSTool::FST_object::FST_object(std::string name){
     _fullName = name;
     int *find = new int(_fullName.find_last_of("/\\")); // split into file name and path
     if(*find !=std::string::npos){
@@ -29,7 +29,7 @@ FSTool::_base::_base(std::string name){
     delete find; // free memory 
 }
 
-void FSTool::_base::_updateFullName(std::string path, std::string name){
+void FSTool::FST_object::_updateFullName(std::string path, std::string name){
     std::string *_path = new std::string(path); // temporary strings
     std::string *_name = new std::string(name); // to path, name and full name
     std::string *_fullName = new std::string;
@@ -55,27 +55,27 @@ void FSTool::_base::_updateFullName(std::string path, std::string name){
     delete _fullName;
 }
 
-int FSTool::_base::size(){
+int FSTool::FST_object::size(){
     return _size;
 }
 
-std::string FSTool::_base::name(){
+std::string FSTool::FST_object::name(){
     return _name;
 }
 
-std::string FSTool::_base::full_name(){
+std::string FSTool::FST_object::full_name(){
     return _fullName;
 }
 
-std::string FSTool::_base::path(){
+std::string FSTool::FST_object::path(){
     return _path;
 }
 
-tm* FSTool::_base::last_modification(){
+tm* FSTool::FST_object::last_modification(){
     return _lmTime; 
 }
 
-void FSTool::_base::rename(std::string newName){
+void FSTool::FST_object::rename(std::string newName){
     int *res = new int(std::rename(_fullName.c_str(), newName.c_str())); // get result of rename
     if(*res != 0){
         if(*res == ENOENT){
@@ -87,43 +87,41 @@ void FSTool::_base::rename(std::string newName){
     delete res;
 }
 
-std::string FSTool::_base::front(){ 
+std::string FSTool::FST_object::front(){ 
     return get(0); //return first element
 }
 
-std::string FSTool::_base::at(int index) {
+std::string FSTool::FST_object::at(int index) {
     if (range(index)){
         return get(index); // return element from index 
     }
     throw FSTool::fs_exception("not valid index", -3); // get exceprion 
 }
 
-void FSTool::_base::move(std::string path){
-    int *res = new int(std::rename(_fullName.c_str(), path.c_str())); // get result of rename
-    if(*res != 0){
-        if(*res == ENOENT){
-            throw FSTool::fs_exception("not found", -1);
-        }
-        throw FSTool::fs_exception("renaming error", -11);
-    }
-    _updateFullName(path,_name);
-    delete res;
-}
-
-FSTool::strvect FSTool::_base::pathSteps(){
+FSTool::strvect FSTool::FST_object::pathSteps(){
     strvect elements; 
+    std::string *temp = new std::string;
+    char* token, * next_token = NULL;
     if(_fullName.find("/") != std::string::npos){
-        std::string *temp = new std::string;
-        char* token;
-        char nameBuff[_fullName.length()- 1];
+#ifdef WIN32
+        char p[1024];
+	    strcpy_s(p, _info->full_name.c_str());
+	    token = strtok_s(p, "\\", &next_token);
+        elements.push_back(token);
+	    for (int i = 0; token != NULL; token = strtok_s(NULL, "\\", &next_token), i++){
+            *temp = elements[i-1] + "\\" + token;
+#elif defined(unix)
+        char nameBuff[_fullName.length()];
         strcpy(nameBuff, _fullName.c_str());
         token = strtok(nameBuff, "/");
         elements.push_back(token);
         for (int i = 1; token != NULL; token = strtok(NULL, "/"), i++){
             *temp = elements[i-1] + "/" + token;
-	        elements.push_back(*temp);
+#endif
+	    	elements.push_back(*temp);
         }
-        delete token; 
+	    delete token; 
+        delete next_token;
         delete temp;
     }
     else{
@@ -132,30 +130,30 @@ FSTool::strvect FSTool::_base::pathSteps(){
     return elements;
 }
 
-bool FSTool::_base::exists(){
+bool FSTool::FST_object::exists(){
     return FSTool::exists(_fullName); // return result of FSTool::exists(std::string)
 }
 
-bool FSTool::operator==(FSTool::_base & objectA, FSTool::_base & objectB){
+bool FSTool::operator==(FSTool::FST_object & objectA, FSTool::FST_object & objectB){
     return objectA.size() == objectB.size(); 
 }
 
-bool FSTool::operator>=(FSTool::_base & objectA, FSTool::_base & objectB){
+bool FSTool::operator>=(FSTool::FST_object & objectA, FSTool::FST_object & objectB){
     return objectA.size() >= objectB.size(); 
 }
 
-bool FSTool::operator<=(FSTool::_base & objectA, FSTool::_base & objectB){
+bool FSTool::operator<=(FSTool::FST_object & objectA, FSTool::FST_object & objectB){
     return objectA.size() <= objectB.size(); 
 }
 
-bool FSTool::operator!=(FSTool::_base & objectA, FSTool::_base & objectB){
+bool FSTool::operator!=(FSTool::FST_object & objectA, FSTool::FST_object & objectB){
     return objectA.size() != objectB.size(); 
 }
 
-bool FSTool::operator<(FSTool::_base & objectA, FSTool::_base & objectB){
+bool FSTool::operator<(FSTool::FST_object & objectA, FSTool::FST_object & objectB){
     return objectA.size() < objectB.size(); 
 }
 
-bool FSTool::operator>(FSTool::_base & objectA, FSTool::_base & objectB){
+bool FSTool::operator>(FSTool::FST_object & objectA, FSTool::FST_object & objectB){
     return objectA.size() > objectB.size(); 
 }

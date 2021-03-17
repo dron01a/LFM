@@ -4,14 +4,14 @@
 #define stat _stat
 #endif
 
-FSTool::file::file(std::string name) : FSTool::_base(name) {
+FSTool::file::file(std::string name) : FSTool::FST_object(name) {
     _extension = extension();
     if(exists()){
         update();
     }
 }   
 
-FSTool::file::file(std::string name, std::string path) : FSTool::_base(name,path) {
+FSTool::file::file(std::string name, std::string path) : FSTool::FST_object(name,path) {
     _extension = extension();
     if(exists()){
         update();
@@ -223,18 +223,6 @@ void FSTool::file::copy(file &source){
     delete out;
 }
 
-void FSTool::file::copy(std::string name){
-    std::ifstream *src; // temp input
-    std::ofstream *out; // temp output
-    src = new std::ifstream(name, std::ios::binary); // open input file
-    out = new std::ofstream(_fullName, std::ios::binary); // open source file 
-    *out << src->rdbuf(); // write data
-    src->close(); // close streams 
-	out->close();
-    delete src; // free memory
-    delete out;
-}
-
 int FSTool::file::find(std::string object, int begin, int end){
     if(!exists()){
         throw fs_exception("file not found", -2); // if file exists
@@ -341,3 +329,42 @@ void FSTool::file::write(std::string buff){
     update(); // update information of file 
     delete bin;
 }
+
+#ifdef unix
+
+void FSTool::file::move(std::string path){
+    if(!FSTool::exists(path)){
+        throw fs_exception("not found", -2);
+    }
+    file * temp = new file(_name, path);
+    temp->copy(*this);
+    delete temp;
+    destroy();
+#ifdef WIN32
+	if(path[path.length() -1] != '\\'){
+		_fullName = path + '\\' + _name;
+		_path += '\\';
+	}
+#elif defined(unix) 
+    if(path[path.length() -1] != '/'){
+		_fullName = path + '/' + _name;
+		_path += '/';
+	}
+#endif
+    else{
+		_fullName = path + _name;
+	}
+}
+
+void FSTool::file::copy(std::string path ){
+    std::ifstream *src; // temp input
+    std::ofstream *out; // temp output
+    src = new std::ifstream( path, std::ios::binary); // open input file
+    out = new std::ofstream(_fullName, std::ios::binary); // open source file 
+    *out << src->rdbuf(); // write data
+    src->close(); // close streams 
+	out->close();
+    delete src; // free memory
+    delete out;
+}
+#endif

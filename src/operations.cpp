@@ -107,6 +107,12 @@ void information(std::string name, message &result){
     }
 }
 
+
+
+
+
+
+
 void rename(std::string oldName, std::string newName, message &result){
     int *res = new int(rename(oldName.c_str(), newName.c_str()));
     if(*res != 0){
