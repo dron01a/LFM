@@ -3,7 +3,7 @@
 using namespace FSTool;
 
 void create(std::string type, std::string name, message &result){
-    _base *temp; // temp object
+    FST_object *temp; // temp object
     if(type == "<FILE>"){
         temp = new file(name); 
     }
@@ -26,7 +26,7 @@ void create(std::string type, std::string name, message &result){
 }
 
 void destroy(std::string type, std::string name, message &result){
-    _base *temp; // temp object
+    FST_object *temp; // temp object
     if(type == "<FILE>"){
         temp = new file(name); 
     }
@@ -44,7 +44,7 @@ void destroy(std::string type, std::string name, message &result){
 }
 
 void move(std::string name, std::string path, message &result){
-    _base *temp; // temp object
+    FST_object *temp; // temp object
     if(is_file(name)){
         temp = new file(name); 
     }
@@ -62,7 +62,7 @@ void move(std::string name, std::string path, message &result){
 }
 
 void destroy(std::string name, message &result){
-    _base *temp; // base class 
+    FST_object *temp; // base class 
     if(is_file(name)){ 
         temp = new file(name);  //if is file
     }
@@ -106,12 +106,6 @@ void information(std::string name, message &result){
         result.add(name + " <NOT_FOUND>");
     }
 }
-
-
-
-
-
-
 
 void rename(std::string oldName, std::string newName, message &result){
     int *res = new int(rename(oldName.c_str(), newName.c_str()));
