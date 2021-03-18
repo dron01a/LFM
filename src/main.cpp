@@ -66,9 +66,7 @@ int main(int argc, char **argv){
             }
             break;
         case _move:
-            printf("move\n");
             if(countArgsCheck(result,argc,4,4)){
-                printf("move\n");
                 move(argv[2],argv[3],result); // move object
             }
             break;

@@ -9,7 +9,6 @@
 void create(std::string type, std::string name, message &result);    
 
 // destroy folder/file
-void destroy(std::string type, std::string name, message &result);   
 void destroy(std::string name, message &result);                   
 
 // move to directory folde/file

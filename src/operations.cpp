@@ -25,24 +25,6 @@ void create(std::string type, std::string name, message &result){
     delete temp;
 }
 
-void destroy(std::string type, std::string name, message &result){
-    FST_object *temp; // temp object
-    if(type == "<FILE>"){
-        temp = new file(name); 
-    }
-    if(type == "<FOLDER>"){
-        temp = new folder(name); 
-    }
-    if(!temp->exists()){ 
-        result.add("liza > "+ type + " \"" + name +"\" <NOT_FOUND>");
-    }
-    else{
-        temp->destroy(); // delete 
-        result.add("liza > " + type + " \"" + name +"\" <DELETED>");
-    }
-    delete temp; // free memory
-}
-
 void move(std::string name, std::string path, message &result){
     FST_object *temp; // temp object
     if(is_file(name)){
