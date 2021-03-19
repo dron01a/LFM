@@ -18,7 +18,7 @@ enum _command{
 };
 
 // return commnad
-_command getCommnad(int argc, char **argv); 
+_command getCommnad(char *arg); 
 
 // check count of arguments
 bool countArgsCheck( message & _result, int count, int firstLim, int lastLim = 0);
@@ -32,7 +32,7 @@ int main(int argc, char **argv){
     loadConfig(configPath,config);
     localPath += config.lang;
     message result;  // result of the program
-    _command _command = getCommnad(argc,argv); // get curient comand
+    _command _command = getCommnad(argv[1]); // get curient comand
     switch(_command){
         case _help: // get info of commands
             if(config.mode != "log"){
@@ -41,22 +41,22 @@ int main(int argc, char **argv){
             break;
         case _createFile:
             if(countArgsCheck(result,argc,3)){
-                for(int i = 2; i < argc; i++){
-                    create("<FILE>", argv[i], result);
+                for(int count = 2; count < argc; count++){
+                    create("<FILE>", argv[count], result);
                 }
             }
             break;
         case _createFolder:
             if(countArgsCheck(result,argc,3)){
-                for(int i = 2; i < argc; i++){
-                    create("<FOLDER>", argv[i], result); 
+                for(int count = 2; count < argc; count++){
+                    create("<FOLDER>", argv[count], result); 
                 }
             }
             break;
         case _remove:
             if(countArgsCheck(result,argc,3)){
-                for(int i = 2; i < argc; i++){
-                    destroy(argv[i],result); // destroy objects 
+                for(int count = 2; count < argc; count++){
+                    destroy(argv[count],result); // destroy objects 
                 }
             }
             break;
@@ -66,14 +66,16 @@ int main(int argc, char **argv){
             }
             break;
         case _move:
-            if(countArgsCheck(result,argc,4,4)){
-                move(argv[2],argv[3],result); // move object
+            if(countArgsCheck(result,argc,4)){
+                for(int count = 2; count < argc - 1; count++){
+                    move(argv[count],argv[argc-1],result); // move object
+                }
             }
             break;
         case _info:
             if(countArgsCheck(result,argc,3) && config.mode != "log"){
-                for(int i = 2; i < argc; i++){
-                    information(argv[i],result); // return information of files
+                for(int count = 2; count < argc; count++){
+                    information(argv[count],result); // return information of files
                 }
             }
             break;
@@ -90,28 +92,28 @@ int main(int argc, char **argv){
     return 0;
 }
 
-_command getCommnad(int argc, char **argv){
-    if(strcmp(argv[1],"mfl") == 0){
+_command getCommnad(char *arg){
+    if(strcmp(arg,"mfl") == 0){
         return _createFile;
     }
-    else if(strcmp(argv[1],"mdr") == 0){
+    else if(strcmp(arg,"mdr") == 0){
         return _createFolder;
     }
-    else if(strcmp(argv[1],"move") == 0){
+    else if(strcmp(arg,"move") == 0){
         return _move;
     }
-    else if( strcmp(argv[1],"rfl") == 0 || 
-        strcmp(argv[1],"rdr") == 0 || 
-        strcmp(argv[1],"remove") == 0 ){
+    else if( strcmp(arg,"rfl") == 0 || 
+        strcmp(arg,"rdr") == 0 || 
+        strcmp(arg,"remove") == 0 ){
         return _remove;
     }
-    else if (strcmp(argv[1],"rename") == 0){
+    else if (strcmp(arg,"rename") == 0){
         return _rename;
     }
-    else if(strcmp(argv[1],"info") == 0){
+    else if(strcmp(arg,"info") == 0){
         return _info;
     }
-    else if(strcmp(argv[1],"help") == 0){
+    else if(strcmp(arg,"help") == 0){
         return _help;
     }
     else{
