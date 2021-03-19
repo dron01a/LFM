@@ -1,9 +1,9 @@
 #ifndef __LOCALIZATION_H__
 #define __LOCALIZATION_H__
 
-#include "FSTool_lib/FSTool.h"
-#include "WPTool_lib/WPTool.h"
-#include "SXML_lib/SXML.h"
+#include "../libs/FSTool_lib/FSTool.h"
+#include "../libs/WPTool_lib/WPTool.h"
+#include "../libs/SXML_lib/SXML.h"
 
 using namespace FSTool;
 using namespace WPTool;

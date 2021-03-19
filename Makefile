@@ -6,13 +6,13 @@ CFLAGS=-c -Wall
 HOME_PATH = ${HOME}
 
 # path to FSTool 
-FSTOOL=./src/FSTool_lib/
+FSTOOL=./libs/FSTool_lib/
 
 # path to WPTool
-WPTOOL=./src/WPTool_lib/
+WPTOOL=./libs/WPTool_lib/
 
 #path to SXML
-SXML=./src/SXML_lib/
+SXML=./libs/SXML_lib/
 
 # sources of liza 
 SOURCES_PATH=./src/*.cpp
