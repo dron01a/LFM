@@ -8,7 +8,7 @@ Designed for quick operations with files and folders<br/>
     WPTool: https://github.com/ARmodRey/WPTool.git
     SXML: https://github.com/ARmodRey/SXML.git
     
-#### Install
+## Install
     git clone https://github.com/ARmodRey/LFM.git
     make
     make install
@@ -30,5 +30,7 @@ Designed for quick operations with files and folders<br/>
 ### Other commands
     info -> print info of folder/file
         Example: liza info test.cpp
-    move -> moves folder/file along the specified path
+    move -> move folder/file along the specified path
         Example: liza move test.cpp test_folder
+    copy -> copy folder/file from path
+    

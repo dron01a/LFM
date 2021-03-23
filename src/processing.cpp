@@ -10,6 +10,9 @@ _command getCommnad(std::string commandName){
     else if(commandName == "move"){
         return _move;
     }
+    else if(commandName == "copy"){
+        return _copy;
+    }
     else if(commandName == "rfl" || commandName == "rdr" || commandName == "remove"){
         return _remove;
     }
@@ -38,7 +41,7 @@ bool countArgsCheck(message & _result, int count, int firstLim, int lastLim){
 void loopFunc(contrlFunc func, message & result, strvect& argv, int firstLim, int lastLim){
     if(countArgsCheck(result,argv.size(),firstLim,lastLim)){
         for(int count = 2; count < argv.size() - 1; count++){
-            func(argv[argv.size() - 1], argv[count] , result); // run func
+            func(argv[count], argv[argv.size() - 1] , result); // run func
         }
     }
 }
@@ -76,6 +79,9 @@ void commandExexc( message & result, config & config ,strvect & argv){
             break;
         case _move:
             loopFunc(move, result , argv, 4);
+            break;
+        case _copy:
+            loopFunc(copy, result , argv, 4);
             break;
         case _info:
             loopFunc(information, result , argv, 3);

@@ -17,6 +17,7 @@ enum _command{
     _rename,
     _info,
     _help,
+    _copy,
     _cc_COM,
     _unK_COM
 };

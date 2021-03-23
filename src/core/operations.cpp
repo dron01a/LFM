@@ -2,7 +2,7 @@
 
 using namespace FSTool;
 
-void create(std::string type, std::string name, message &result){
+void create(std::string name, std::string type, message &result){
     FST_object *temp; // temp object
     if(type == "<FILE>"){
         temp = new file(name); 
@@ -25,7 +25,7 @@ void create(std::string type, std::string name, message &result){
     delete temp;
 }
 
-void move(std::string path, std::string name, message &result){
+void move(std::string name, std::string path, message &result){
     FST_object *temp; // temp object
     if(is_file(name)){
         temp = new file(name); 
@@ -89,7 +89,7 @@ void information(std::string name, message &result){
     }
 }
 
-void rename(std::string newName, std::string oldName, message &result){
+void rename(std::string oldName, std::string newName, message &result){
     int *res = new int(rename(oldName.c_str(), newName.c_str()));
     if(*res != 0){
         if(*res == ENOENT){
@@ -103,4 +103,30 @@ void rename(std::string newName, std::string oldName, message &result){
         result.add("liza > \"" + oldName + "\" <RENAME> \"" + newName + "\"");
     }
     delete res;
+}
+
+void copy(std::string source, std::string dest, message &result){
+    FST_object *tempDest; // temp dest object
+    FST_object *tempSrc; // temp source object
+    if(is_file(source)){
+        tempDest = new file(dest); 
+        tempSrc = new file(source); 
+    }
+    if(is_folder(source)){
+        tempSrc = new folder(source); 
+        tempDest = new folder(tempSrc->name(), dest);
+        tempDest->create();
+    }
+    if(!tempDest->exists()){         
+        result.add("liza > \"" + dest + "\" <NOT_FOUND>");
+    }
+    if(!tempSrc->exists()){         
+        result.add("liza > \"" + source + "\" <NOT_FOUND>");
+    }
+    else{
+        tempDest->copy(source); // copy
+        result.add("liza > \"" + source +"\" <COPY> \"" + dest +"\"");
+    }
+    delete tempSrc; // free memory
+    delete tempDest;
 }

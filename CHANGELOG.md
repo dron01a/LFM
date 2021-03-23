@@ -19,3 +19,14 @@
 
 - move
 - config load 
+
+## [0.2.1] - 2021-03-23
+
+### Added
+
+- function copy
+- new command processing
+
+### Fixed 
+
+- function move 
