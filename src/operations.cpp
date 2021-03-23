@@ -25,7 +25,7 @@ void create(std::string type, std::string name, message &result){
     delete temp;
 }
 
-void move(std::string name, std::string path, message &result){
+void move(std::string path, std::string name, message &result){
     FST_object *temp; // temp object
     if(is_file(name)){
         temp = new file(name); 
@@ -89,7 +89,7 @@ void information(std::string name, message &result){
     }
 }
 
-void rename(std::string oldName, std::string newName, message &result){
+void rename(std::string newName, std::string oldName, message &result){
     int *res = new int(rename(oldName.c_str(), newName.c_str()));
     if(*res != 0){
         if(*res == ENOENT){

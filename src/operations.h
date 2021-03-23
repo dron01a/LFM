@@ -12,12 +12,12 @@ void create(std::string type, std::string name, message &result);
 void destroy(std::string name, message &result);                   
 
 // move to directory folde/file
-void move(std::string name, std::string path, message &result);      
+void move(std::string path, std::string name, message &result);      
 
 // get information of file/folder
 void information(std::string name, message &result);
 
 // rename file/folder
-void rename(std::string oldName, std::string newName, message &result);
+void rename(std::string newName, std::string oldName, message &result);
 
 #endif
