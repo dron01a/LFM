@@ -1,8 +1,8 @@
 #ifndef __OUTPUT_H__
 #define __OUTPUT_H__
 
-#include "../libs/FSTool_lib/FSTool.h"
-#include "../libs/WPTool_lib/WPTool.h"
+#include "../../libs/FSTool_lib/FSTool.h"
+#include "../../libs/WPTool_lib/WPTool.h"
 #include "settings.h"
 
 using namespace FSTool;

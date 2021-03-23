@@ -1,9 +1,9 @@
 #ifndef __COMMAND_PROC__H__
 #define __COMMAND_PROC__H__
 
-#include "output.h"
-#include "operations.h"
-#include "settings.h"
+#include "core/output.h"
+#include "core/operations.h"
+#include "core/settings.h"
 
 typedef void (*contrlFunc)(std::string, std::string, message&); // for move, create, rename
 typedef void (*lowFunc)(std::string,message&); // for destroy , information

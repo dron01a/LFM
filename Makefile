@@ -14,6 +14,9 @@ WPTOOL=./libs/WPTool_lib/
 #path to SXML
 SXML=./libs/SXML_lib/
 
+# path of core
+CORE_PATH=./src/core/*.cpp
+
 # sources of liza 
 SOURCES_PATH=./src/*.cpp
 
@@ -48,7 +51,7 @@ wptool.a: ${WPTOOL}WPTool.cpp
 	ar cr wptool.a wptool.o
 
 ${EXECUTABLE}: fstool.a wptool.a SXML.o
-	$(CC) $(SOURCES_PATH) SXML.o fstool.a wptool.a -o ${EXECUTABLE}
+	$(CC) $(SOURCES_PATH) $(CORE_PATH) SXML.o fstool.a wptool.a -o ${EXECUTABLE}
 
 install: 
 	mkdir -vp ${HOME_PATH}/.liza/

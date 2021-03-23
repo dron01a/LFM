@@ -1,7 +1,7 @@
-#include "operations.h"
-#include "settings.h"
+#include "core/operations.h"
+#include "core/settings.h"
+#include "core/output.h"
 #include "localization.h"
-#include "output.h"
 #include "processing.h"
 #include <iostream>
 

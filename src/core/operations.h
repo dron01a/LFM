@@ -1,7 +1,7 @@
 #ifndef __OPERATIONS__H__
 #define __OPERATIONS__H__
 
-#include "../libs/FSTool_lib/FSTool.h"
+#include "../../libs/FSTool_lib/FSTool.h"
 #include "settings.h"
 #include "output.h"
 
