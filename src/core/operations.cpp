@@ -108,24 +108,37 @@ void rename(std::string oldName, std::string newName, message &result){
 void copy(std::string source, std::string dest, message &result){
     FST_object *tempDest; // temp dest object
     FST_object *tempSrc; // temp source object
+    if(!exists(dest)){         
+        result.add("liza > \"" + dest + "\" <NOT_FOUND>");
+    }
+    if(!exists(source)){         
+        result.add("liza > \"" + source + "\" <NOT_FOUND>");
+    }
     if(is_file(source)){
-        tempDest = new file(dest); 
         tempSrc = new file(source); 
+        if(is_file(dest)){
+            tempDest = new file(dest); 
+            tempDest->copy(source); // copy
+            result.add("liza > \"" + source +"\" <COPY> \"" + dest +"\"");
+        }
+        if(is_folder(dest)){
+            tempDest = new file(tempSrc->name(), dest); 
+            tempDest->create();
+            tempDest->copy(source); // copy
+            result.add("liza > \"" + source +"\" <COPY> \"" + dest +"\"");
+        }
     }
     if(is_folder(source)){
         tempSrc = new folder(source); 
-        tempDest = new folder(tempSrc->name(), dest);
-        tempDest->create();
-    }
-    if(!tempDest->exists()){         
-        result.add("liza > \"" + dest + "\" <NOT_FOUND>");
-    }
-    if(!tempSrc->exists()){         
-        result.add("liza > \"" + source + "\" <NOT_FOUND>");
-    }
-    else{
-        tempDest->copy(source); // copy
-        result.add("liza > \"" + source +"\" <COPY> \"" + dest +"\"");
+        if(is_file(dest)){
+            tempDest = new file(dest); 
+        } 
+        if(is_folder(dest)){
+            tempDest = new folder(tempSrc->name(), dest);
+            tempDest->create();
+            tempDest->copy(source); // copy
+            result.add("liza > \"" + source +"\" <COPY> \"" + dest +"\"");
+        }
     }
     delete tempSrc; // free memory
     delete tempDest;
