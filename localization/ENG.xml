@@ -10,7 +10,7 @@
         move -> moves folder/file along the specified path\n\tExample: liza move test.cpp test_folder
     </HELP>
     <WRONG_ARGS>wrong number of args</WRONG_ARGS>
-    <NON_COMMAND>Liza > unknown command,please call \"help\" to view the list of commands</NON_COMMAND>
+    <NON_COMMAND>Liza - unknown command,please call "help" to view the list of commands</NON_COMMAND>
     <EXISTS>already exists</EXISTS>
     <CREATED>created</CREATED>
     <C_ERROR>creation error</C_ERROR>

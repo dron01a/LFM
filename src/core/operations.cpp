@@ -118,6 +118,7 @@ void copy(std::string source, std::string dest, message &result){
         tempSrc = new file(source); 
         if(is_file(dest)){
             tempDest = new file(dest); 
+            tempDest->create();
             tempDest->copy(source); // copy
             result.add("liza > \"" + source +"\" <COPY> \"" + dest +"\"");
         }
