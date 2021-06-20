@@ -35,4 +35,6 @@ void loopFunc(lowFunc func, message & result, strvect & argv, int firstLim, int 
 // execution of standard commands
 void commandExexc( message & _result, config & config, strvect & argv); 
 
+void scriptRun(message & _result, config & config, strvect & argv);
+
 #endif

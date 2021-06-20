@@ -1,0 +1,21 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ сборка активного файла",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "libs/SXML_lib/*.cpp",
+                "libs/WPTool_lib/*.cpp",
+                "libs/FSTool_lib/*.cpp",
+                "src/*.cpp",
+                "src/core/*.cpp",
+                "-o",
+                "main"
+            ],
+            "detail": "Задача создана отладчиком."
+        }
+    ],
+    "version": "2.0.0"
+}

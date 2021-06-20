@@ -1,3 +1,4 @@
 language:RUS.xml;
 mode:display;
 format:[%Y.%m.%d] [%X];
+test:test.liza

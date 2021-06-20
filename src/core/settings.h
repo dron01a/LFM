@@ -3,6 +3,7 @@
 
 #include "../../libs/FSTool_lib/FSTool.h"
 #include "../../libs/WPTool_lib/WPTool.h"
+#include <map>
 
 using namespace FSTool;
 using namespace WPTool;
@@ -12,6 +13,7 @@ struct config{
     std::string lang;   // localization language
     std::string mode;   // message delivery mode
     std::string format; // data and time format
+    std::map<std::string,std::string> commnads;  
 };
 
 // load settings to struct

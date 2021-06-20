@@ -200,7 +200,7 @@ int WPTool::string_content::find(std::string str, int start, int end){
     static int _start;
     static int _end;
     static std::string object;
-    if(object != str || start < _start || end < _end){
+    if(object != str || start != _start || end != _end){
         object = str; 
         result = _start;
         _start = start;
@@ -212,6 +212,8 @@ int WPTool::string_content::find(std::string str, int start, int end){
             return count;
         }
     }
+    result = 0;
+    object = "";
     return -1;
 }
 

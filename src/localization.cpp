@@ -1,8 +1,7 @@
 #include "localization.h"
 
 std::string localization(std::string locFile, std::string text){
-    file locXML(locFile);
-    XML * loc = loadXMLFile(locXML.buff()); 
+    XML * loc = loadXMLFile(locFile); 
     std::string result; 
     int found = 0; // element with <TAG>
     string_content message(text," \t\n");

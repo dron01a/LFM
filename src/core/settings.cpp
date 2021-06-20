@@ -7,11 +7,14 @@ void loadConfig(std::string filename, config & _config){
         if(confLine[count] == "language"){
             _config.lang = confLine[count+1];
         }
-        if(confLine[count] == "mode"){
+        else if(confLine[count] == "mode"){
             _config.mode = confLine[count+1];
         }
-        if(confLine[count] == "format"){
+        else if(confLine[count] == "format"){
             _config.format = confLine[count+1];
+        }
+        else{
+            _config.commnads.insert(std::make_pair(confLine[count],confLine[count+1]));
         }        
     }
 }
